@@ -82,7 +82,14 @@
       background-color: #00adb5;
       border-color: #00adb5;
     }
+    .profile-pic {
+      width: 250px;
+      height: 250px;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
+    }
   </style>
+  
 </head>
 
 <body>
@@ -108,15 +115,16 @@
 
   <section class="hero">
     <div class="container" data-aos="fade-up">
-      <!-- <img src="imgPruba.png" class="img-thumbnail" alt="perfil"> -->
+      <!-- <img src="" class="img-thumbnail" alt="perfil"> -->
+      <img src="imgPruba.png" alt="Sergio Sepúlveda" class="profile-pic rounded-circle mb-4">
 
       <h1>Sergio David Sepúlveda Montoya</h1>
       <p class="typing">Desarrollador full stack</p>
-      <a href="Cv%20sergio%20david%20sepulveda.pdf" class="btn btn-outline-light me-2" download><i
+      <a href="asset/sergio_david_sepulveda_montoya_(cv).pdf" class="btn btn-outline-light me-2" download target="_blank"><i
           class="fa-solid fa-download"></i> Descargar CV</a>
       <!-- Botones con iconos -->
       <div class="mt-3">
-        <a href="mailto:sergio@example.com" class="btn btn-outline-light me-2">
+        <a href="#contacto" class="btn btn-outline-light me-2">
           <i class="fas fa-envelope"></i> Email
         </a>
         <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="btn btn-outline-light me-2">
@@ -137,7 +145,7 @@
           <h2 class="mb-4 fw-bold border-bottom pb-2">👨‍💻 Sobre mí</h2>
           <p class="lead">
             Soy un desarrollador con experiencia en la construcción de aplicaciones web modernas.
-            Con una sólida base en tecnologías frontend y backend, creo soluciones escalables que resuelven problemas
+            Con una base sólida en tecnologías frontend y backend, creo soluciones escalables que resuelven problemas
             del mundo real.
           </p>
         </div>
@@ -332,7 +340,6 @@
             <h5 class="fw-bold mb-3"><i class="fas fa-tools me-2"></i>Herramientas</h5>
             <ul class="list-unstyled mb-0">
               <li><i class="fab fa-git-alt text-warning me-2"></i>Git</li>
-              <li><i class="fab fa-bootstrap text-primary me-2"></i>Bootstrap</li>
             </ul>
           </div>
         </div>
@@ -435,7 +442,10 @@
     </div>
   </section>
 
-
+  <footer class="bg-dark text-center text-white py-4">
+    <p class="mb-0">&copy; 2025 Sergio David Sepúlveda. Todos los derechos reservados.</p>
+  </footer>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
