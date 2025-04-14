@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Sergio Sepúlveda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background: #121212;
+      color: #f1f1f1;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .navbar {
+      background-color: rgba(18, 18, 18, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #f1f1f1 !important;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .typing {
+      font-size: 1.5rem;
+      color: #00adb5;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .btn-primary {
+      background-color: #00adb5;
+      border-color: #00adb5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Sergio David Sepúlveda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container" data-aos="fade-up">
+      <!-- <img src="imgPruba.png" class="img-thumbnail" alt="perfil"> -->
+
+      <h1>Sergio David Sepúlveda Montoya</h1>
+      <p class="typing">Desarrollador full stack</p>
+      <a href="Cv%20sergio%20david%20sepulveda.pdf" class="btn btn-outline-light me-2" download><i
+          class="fa-solid fa-download"></i> Descargar CV</a>
+      <!-- Botones con iconos -->
+      <div class="mt-3">
+        <a href="mailto:sergio@example.com" class="btn btn-outline-light me-2">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="btn btn-outline-light me-2">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/53R610-D4V1D" target="_blank" class="btn btn-outline-light">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- sobre-mi -->
+  <section id="sobre-mi" class="py-5 ">
+    <div class="container" data-aos="fade-right">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="mb-4 fw-bold border-bottom pb-2">👨‍💻 Sobre mí</h2>
+          <p class="lead">
+            Soy un desarrollador con experiencia en la construcción de aplicaciones web modernas.
+            Con una sólida base en tecnologías frontend y backend, creo soluciones escalables que resuelven problemas
+            del mundo real.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="shadow-lg rounded overflow-hidden">
+            <div class="ratio ratio-21x9">
+              <iframe class="border-0" src="https://www.youtube.com/embed/QP7TrNcYnns" title="Video de presentación"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="bg-dark">
+    <div class="container" data-aos="fade-up">
+      <h2 class="mb-5 fw-bold border-bottom pb-2">💼 Experiencia Profesional</h2>
+
+      <div class="row g-4">
+
+        <!-- Serviunix S.A.S -->
+        <div class="col-12">
+          <div class="card bg-dark text-white shadow-lg border-0">
+            <div class="card-body">
+              <h4 class="fw-bold mb-3">Desarrollador aplicaciones Web - Serviunix S.A.S</h4>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt me-2"></i>
+                <strong>Febrero 2021 - Diciembre 2024</strong>
+              </p>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <h5 class="text-info"> Proyectos Principales</h5>
+                  <ul class="list-unstyled">
+                    <li><strong>Satori:</strong> Sistema de gestión clínica e inventario.</li>
+                    <li><strong>Ecologística:</strong> Plataforma logística para residuos.</li>
+                    <li><strong>SuVenta:</strong> Control de inventario y facturación.</li>
+                    <li><strong>SuDriver:</strong> Gestión de conductores y vehículos.</li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <h5 class="text-info">⚙️ Responsabilidades </h5>
+                  <ul class="list-unstyled">
+                    <li>Desarrollo frontend y backend de sistemas personalizados.</li>
+                    <li>Implementación de bases de datos SQL con consultas optimizadas.</li>
+                    <li>Participación en análisis funcional, pruebas y despliegue.</li>
+                    <li>Soporte técnico a usuarios y documentación técnica.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <strong class="d-block mb-2">Tecnologías:</strong>
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item me-3">
+                    <i class="fab fa-php text-info"></i> PHP
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <i class="fab fa-laravel text-danger"></i> Laravel
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <i class="fab fa-js-square text-warning"></i> JavaScript
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <i class="fas fa-database text-light"></i> SQL
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <i class="fab fa-bootstrap text-primary"></i> Bootstrap
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="mb-5 fw-bold border-bottom pb-2">Proyectos Destacados</h2>
+      <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide activo -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-5 mb-3 mx-1">
+                <div class="card bg-secondary text-white">
+                  <div class="ratio ratio-16x9">
+                    <iframe class="border-0"
+                      src="https://www.youtube.com/embed/ccEx0ti5pVA"
+                      title="Carrito Angular"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Carro de compras con Angular</h5>
+                    <p class="card-text">Carrito de Compras en Angular con Redux (@ngrx/store) - Implementación Completa</p>
+                    <a href="https://github.com/53R610-D4V1D/user-app" class="btn btn-outline-light btn-sm">
+                      <i class="fab fa-github"></i> Código Fuente
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-5 mb-3 mx-1">
+                <div class="card bg-secondary text-white">
+                  <div class="ratio ratio-16x9">
+                    <iframe class="border-0"
+                      src="https://www.youtube.com/embed/5JYtO72YSCY"
+                      title="Control de usuarios"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Control de usuarios</h5>
+                    <p class="card-text">Proyecto Full Stack: Control de Usuarios con Angular, Spring Boot, MySQL y Redux 🔐</p>
+                    <a href="#" class="btn btn-outline-light btn-sm">
+                      <i class="fab fa-github"></i> Código Fuente
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Aquí podrías añadir más carousel-item si tienes más proyectos -->
+        </div>
+  
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- HABILIDADES, PROYECTOS, EXPERIENCIA, EDUCACIÓN, CONTACTO permanecen sin cambios importantes visuales-->
+  <section id="habilidades" class="bg-dark text-white py-5">
+    <div class="container" data-aos="fade-left">
+      <h2 class="mb-5  fw-bold border-bottom pb-2">🛠️ Habilidades Técnicas</h2>
+      <div class="row g-4">
+
+        <!-- Lenguajes -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 bg-secondary rounded shadow-sm h-100">
+            <h5 class="fw-bold mb-3"><i class="fas fa-code me-2"></i>Lenguajes</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fab fa-php text-info me-2"></i>PHP</li>
+              <li><i class="fab fa-js text-warning me-2"></i>JavaScript</li>
+              <li><i class="fab fa-java text-danger me-2"></i>Java</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 bg-secondary rounded shadow-sm h-100">
+            <h5 class="fw-bold mb-3"><i class="fas fa-layer-group me-2"></i>Frameworks</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fab fa-laravel text-danger me-2"></i>Laravel</li>
+              <li><i class="fab fa-angular text-danger me-2"></i>Angular</li>
+              <li><i class="fas fa-leaf text-success me-2"></i>Spring Boot</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bases de datos -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 bg-secondary rounded shadow-sm h-100">
+            <h5 class="fw-bold mb-3"><i class="fas fa-database me-2"></i>Bases de datos</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-database text-light me-2"></i>MySQL</li>
+              <li><i class="fas fa-database text-light me-2"></i>SQL</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 bg-secondary rounded shadow-sm h-100">
+            <h5 class="fw-bold mb-3"><i class="fas fa-tools me-2"></i>Herramientas</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fab fa-git-alt text-warning me-2"></i>Git</li>
+              <li><i class="fab fa-bootstrap text-primary me-2"></i>Bootstrap</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- educacion -->
+  <section id="educacion" class=" py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="mb-5 fw-bold border-bottom pb-2">🎓 Educación</h2>
+
+      <div class="row g-4">
+
+        <!-- Ingeniero de Software -->
+        <div class="col-md-4">
+          <div class="card bg-secondary text-white h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title fw-bold"><i class="fas fa-graduation-cap me-2"></i>Ingeniero de Software</h5>
+              <p class="card-text">Formación universitaria enfocada en arquitectura de software, metodologías ágiles y
+                desarrollo full stack.</p>
+              <a href="asset/ingeniero.pdf" class="btn btn-outline-light btn-sm" target="_blank">
+                <i class="fas fa-file-pdf me-1"></i> Ver Título
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tecnólogo en Análisis y Desarrollo -->
+        <div class="col-md-4">
+          <div class="card bg-secondary text-white h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title fw-bold"><i class="fas fa-laptop-code me-2"></i>Tecnólogo en Análisis y Desarrollo
+              </h5>
+              <p class="card-text">Enfoque práctico en análisis, diseño e implementación de sistemas de información.</p>
+              <a href="asset/tecnologo.pdf" class="btn btn-outline-light btn-sm" target="_blank">
+                <i class="fas fa-file-pdf me-1"></i> Ver Título
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Curso Angular & Spring Boot -->
+        <div class="col-md-4">
+          <div class="card bg-secondary text-white h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title fw-bold"><i class="fas fa-certificate me-2"></i>Curso Angular & Spring Boot</h5>
+              <p class="card-text">Capacitación intensiva para desarrollar aplicaciones web modernas con backend y
+                frontend desacoplados.</p>
+              <a href="asset\angular_spring.pdf" class="btn btn-outline-light btn-sm" target="_blank">
+                <i class="fas fa-file-pdf me-1"></i> Ver Certificado
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- contacto -->
+  <section id="contacto" class="py-5 bg-secondary text-white">
+    <div class="container" data-aos="fade-up">
+      <h2 class="mb-4 text-center fw-bold border-bottom pb-2">📞 Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-secondary text-white d-flex align-items-center">
+              <i class="fas fa-phone-alt me-3"></i> +57 314 589 9773
+            </li>
+            <li class="list-group-item bg-secondary text-white d-flex align-items-center">
+              <i class="fas fa-envelope me-3"></i>
+              <a href="mailto:sergiose534@gmail.com" class="text-white text-decoration-none">sergiose534@gmail.com</a>
+            </li>
+            <li class="list-group-item bg-secondary text-white d-flex align-items-center">
+              <i class="fab fa-linkedin me-3"></i>
+              <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank"
+                class="text-white text-decoration-none">
+                linkedin.com/in/sergio-david-sepulveda...
+              </a>
+            </li>
+            <li class="list-group-item bg-secondary text-white d-flex align-items-center">
+              <i class="fab fa-github me-3"></i>
+              <a href="https://github.com/53R610-D4V1D" target="_blank" class="text-white text-decoration-none">
+                github.com/53R610-D4V1D
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-4 text-center">
+            <a href="mailto:sergiose534@gmail.com" class="btn btn-outline-light me-2">
+              <i class="fas fa-paper-plane"></i> Enviarme un correo
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
