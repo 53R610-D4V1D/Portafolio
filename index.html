@@ -136,6 +136,7 @@
       border: 4px solid var(--primary);
       box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
       transition: all 0.3s ease;
+      object-fit: cover;
     }
 
     .profile-pic:hover {
@@ -171,7 +172,7 @@
       color: var(--primary) !important;
     }
   </style>
-  
+
 </head>
 
 <body>
@@ -202,14 +203,15 @@
 
       <h1>Sergio David Sepúlveda Montoya</h1>
       <p class="typing">Desarrollador full stack</p>
-      <a href="asset/sergio_david_sepulveda_montoya_(cv).pdf" class="btn btn-outline-light me-2" download target="_blank"><i
-          class="fa-solid fa-download"></i> Descargar CV</a>
+      <a href="asset/sergio_david_sepulveda_montoya_(cv).pdf" class="btn btn-outline-light me-2" download
+        target="_blank"><i class="fa-solid fa-download"></i> Descargar CV</a>
       <!-- Botones con iconos -->
       <div class="mt-3">
         <a href="#contacto" class="btn btn-outline-light me-2">
           <i class="fas fa-envelope"></i> Email
         </a>
-        <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="btn btn-outline-light me-2">
+        <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank"
+          class="btn btn-outline-light me-2">
           <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         <a href="https://github.com/53R610-D4V1D" target="_blank" class="btn btn-outline-light">
@@ -324,14 +326,94 @@
               <div class="col-md-5 mb-3 mx-1">
                 <div class="card bg-secondary text-white">
                   <div class="ratio ratio-16x9">
-                    <iframe class="border-0"
-                      src="https://www.youtube.com/embed/ccEx0ti5pVA"
-                      title="Carrito Angular"
+                    <iframe class="border-0" src="https://www.youtube.com/embed/wdlS3RbDNjA"
+                      title="Proyecto Laravel con React" allowfullscreen></iframe>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Proyecto Laravel con React</h5>
+                    <p class="card-text">
+                      Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
+                      robusta de nivel empresarial. Incluye gestión avanzada de roles y permisos administrables desde el
+                      panel, así como diseño de tablas y presentación general optimizada.
+                    </p>
+                    <div class="mb-3">
+                      <span class="badge bg-primary me-2">Laravel</span>
+                      <span class="badge bg-info me-2">React</span>
+                      <span class="badge bg-warning me-2">PHP</span>
+                      <span class="badge bg-success me-2">Panel Admin</span>
+                      <span class="badge bg-secondary me-2">Roles & Permisos</span>
+                    </div>
+                    <div class="mb-3">
+                      <h6 class="text-info">Características principales:</h6>
+                      <ul class="small">
+                        <li>Gestión de inventos y solicitudes de financiación</li>
+                        <li>Panel administrativo con control de roles y permisos</li>
+                        <li>Diseño de tablas dinámicas y presentación intuitiva</li>
+                        <li>Integración Laravel + React</li>
+                      </ul>
+                    </div>
+                    <!-- Si tienes un repositorio, agrega el enlace aquí -->
+                    <!--
+                    <a href="URL_DE_TU_REPOSITORIO" class="btn btn-outline-light btn-sm" target="_blank">
+                      <i class="fab fa-github"></i> Código Fuente
+                    </a>
+                    -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 mb-3 mx-1">
+                <div class="card bg-secondary text-white">
+                  <div class="ratio ratio-16x9">
+                    <iframe class="border-0" src="https://www.youtube.com/embed/OR6bJr5oOG8"
+                      title="Proyecto de filamentphp de manera practica y conociendo la herramienta (Sergio David)"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Proyecto de FilamentPHP de manera práctica</h5>
+                    <p class="card-text">
+                      Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
+                      principales funcionalidades y ventajas para la gestión de datos en aplicaciones Laravel.
+                    </p>
+                    <div class="mb-3">
+                      <span class="badge bg-primary me-2">Laravel</span>
+                      <span class="badge bg-info me-2">FilamentPHP</span>
+                      <span class="badge bg-warning me-2">PHP</span>
+                      <span class="badge bg-success me-2">Panel Admin</span>
+                    </div>
+                    <div class="mb-3">
+                      <h6 class="text-info">Características principales:</h6>
+                      <ul class="small">
+                        <li>Gestión CRUD de recursos</li>
+                        <li>Interfaz moderna y personalizable</li>
+                        <li>Filtros y búsquedas avanzadas</li>
+                        <li>Integración rápida con Laravel</li>
+                      </ul>
+                    </div>
+                    <!-- Si tienes un repositorio, agrega el enlace aquí -->
+                    <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn btn-outline-light btn-sm"
+                      target="_blank">
+                      <i class="fab fa-github"></i> Código Fuente
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="row justify-content-center">
+              <div class="col-md-5 mb-3 mx-1">
+                <div class="card bg-secondary text-white">
+                  <div class="ratio ratio-16x9">
+                    <iframe class="border-0" src="https://www.youtube.com/embed/ccEx0ti5pVA" title="Carrito Angular"
                       allowfullscreen></iframe>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Carro de compras con Angular</h5>
-                    <p class="card-text">Implementación de un carrito de compras completo utilizando Angular y Redux (@ngrx/store) para la gestión del estado global.</p>
+                    <p class="card-text">Implementación de un carrito de compras completo utilizando Angular y Redux
+                      (@ngrx/store) para la gestión del estado global.</p>
                     <div class="mb-3">
                       <span class="badge bg-primary me-2">Angular</span>
                       <span class="badge bg-info me-2">Redux</span>
@@ -345,24 +427,25 @@
                         <li>Carrito de compras persistente</li>
                       </ul>
                     </div>
-                    <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn btn-outline-light btn-sm" target="_blank">
+                    <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn btn-outline-light btn-sm"
+                      target="_blank">
                       <i class="fab fa-github"></i> Código Fuente
                     </a>
                   </div>
                 </div>
               </div>
-  
+
+
               <div class="col-md-5 mb-3 mx-1">
                 <div class="card bg-secondary text-white">
                   <div class="ratio ratio-16x9">
-                    <iframe class="border-0"
-                      src="https://www.youtube.com/embed/5JYtO72YSCY"
-                      title="Control de usuarios"
+                    <iframe class="border-0" src="https://www.youtube.com/embed/5JYtO72YSCY" title="Control de usuarios"
                       allowfullscreen></iframe>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Control de usuarios</h5>
-                    <p class="card-text">Sistema completo de gestión de usuarios con autenticación y autorización, desarrollado con arquitectura de microservicios.</p>
+                    <p class="card-text">Sistema completo de gestión de usuarios con autenticación y autorización,
+                      desarrollado con arquitectura de microservicios.</p>
                     <div class="mb-3">
                       <span class="badge bg-primary me-2">Angular</span>
                       <span class="badge bg-danger me-2">Spring Boot</span>
@@ -380,7 +463,8 @@
                         <li>Base de datos relacional</li>
                       </ul>
                     </div>
-                    <a href="https://github.com/53R610-D4V1D/users-backend" class="btn btn-outline-light btn-sm" target="_blank">
+                    <a href="https://github.com/53R610-D4V1D/users-backend" class="btn btn-outline-light btn-sm"
+                      target="_blank">
                       <i class="fab fa-github"></i> Código Fuente
                     </a>
                   </div>
@@ -388,8 +472,10 @@
               </div>
             </div>
           </div>
+
+
         </div>
-  
+
         <!-- Controles -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -402,7 +488,7 @@
       </div>
     </div>
   </section>
-  
+
 
   <!-- HABILIDADES, PROYECTOS, EXPERIENCIA, EDUCACIÓN, CONTACTO permanecen sin cambios importantes visuales-->
   <section id="habilidades" class="bg-dark text-white py-5">
@@ -497,7 +583,8 @@
         <div class="col-md-4">
           <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
             <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-graduation-cap me-2"></i>Ingeniero de Software</h5>
+              <h5 class="card-title fw-bold text-light"><i class="fas fa-graduation-cap me-2"></i>Ingeniero de Software
+              </h5>
               <p class="card-text">Formación universitaria enfocada en arquitectura de software, metodologías ágiles y
                 desarrollo full stack.</p>
               <a href="asset/ingeniero.pdf" class="btn btn-outline-light btn-sm" target="_blank">
@@ -511,7 +598,8 @@
         <div class="col-md-4">
           <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
             <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-laptop-code me-2"></i>Tecnólogo en Análisis y Desarrollo</h5>
+              <h5 class="card-title fw-bold text-light"><i class="fas fa-laptop-code me-2"></i>Tecnólogo en Análisis y
+                Desarrollo</h5>
               <p class="card-text">Enfoque práctico en análisis, diseño e implementación de sistemas de información.</p>
               <a href="asset/tecnologo.pdf" class="btn btn-outline-light btn-sm" target="_blank">
                 <i class="fas fa-file-pdf me-1"></i> Ver Título
@@ -524,7 +612,8 @@
         <div class="col-md-4">
           <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
             <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-certificate me-2"></i>Curso Angular & Spring Boot</h5>
+              <h5 class="card-title fw-bold text-light"><i class="fas fa-certificate me-2"></i>Curso Angular & Spring
+                Boot</h5>
               <p class="card-text">Capacitación intensiva para desarrollar aplicaciones web modernas con backend y
                 frontend desacoplados.</p>
               <a href="asset\angular_spring.pdf" class="btn btn-outline-light btn-sm" target="_blank">
@@ -582,7 +671,7 @@
   <footer class="bg-dark text-center text-white py-4">
     <p class="mb-0">&copy; 2025 Sergio David Sepúlveda. Todos los derechos reservados.</p>
   </footer>
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
