@@ -106,6 +106,27 @@
       height: 100%;
     }
 
+    .video-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+
+    .ratio-16x9 iframe {
+      transition: opacity 0.3s ease;
+    }
+
+    .ratio-16x9 iframe.loaded {
+      opacity: 1;
+    }
+
+    .ratio-16x9 iframe:not(.loaded) {
+      opacity: 0;
+    }
+
     .btn-primary {
       background-color: var(--primary);
       border-color: var(--primary);
@@ -235,9 +256,12 @@
         </div>
         <div class="col-md-6">
           <div class="shadow-lg rounded overflow-hidden">
-            <div class="ratio ratio-21x9">
-              <iframe class="border-0" src="https://www.youtube.com/embed/QP7TrNcYnns" title="Video de presentación"
-                allowfullscreen></iframe>
+            <div class="ratio ratio-21x9 position-relative">
+              <div class="video-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+              <iframe class="border-0" src="https://www.youtube.com/embed/QP7TrNcYnns" title="Video de presentación - Sergio David Sepúlveda"
+                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
             </div>
           </div>
         </div>
@@ -318,173 +342,193 @@
   <section id="proyectos" class="py-5">
     <div class="container" data-aos="fade-up">
       <h2 class="mb-5 fw-bold border-bottom pb-2">Proyectos Destacados</h2>
-      <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- Slide activo -->
-          <div class="carousel-item active">
-            <div class="row justify-content-center">
-              <div class="col-md-5 mb-3 mx-1">
-                <div class="card bg-secondary text-white">
-                  <div class="ratio ratio-16x9">
-                    <iframe class="border-0" src="https://www.youtube.com/embed/wdlS3RbDNjA"
-                      title="Proyecto Laravel con React" allowfullscreen></iframe>
-                  </div>
 
-                  <div class="card-body">
-                    <h5 class="card-title">Proyecto Laravel con React</h5>
-                    <p class="card-text">
-                      Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
-                      robusta de nivel empresarial. Incluye gestión avanzada de roles y permisos administrables desde el
-                      panel, así como diseño de tablas y presentación general optimizada.
-                    </p>
-                    <div class="mb-3">
-                      <span class="badge bg-primary me-2">Laravel</span>
-                      <span class="badge bg-info me-2">React</span>
-                      <span class="badge bg-warning me-2">PHP</span>
-                      <span class="badge bg-success me-2">Panel Admin</span>
-                      <span class="badge bg-secondary me-2">Roles & Permisos</span>
-                    </div>
-                    <div class="mb-3">
-                      <h6 class="text-info">Características principales:</h6>
-                      <ul class="small">
-                        <li>Gestión de inventos y solicitudes de financiación</li>
-                        <li>Panel administrativo con control de roles y permisos</li>
-                        <li>Diseño de tablas dinámicas y presentación intuitiva</li>
-                        <li>Integración Laravel + React</li>
-                      </ul>
-                    </div>
-                    <!-- Si tienes un repositorio, agrega el enlace aquí -->
-                    <!--
-                    <a href="URL_DE_TU_REPOSITORIO" class="btn btn-outline-light btn-sm" target="_blank">
-                      <i class="fab fa-github"></i> Código Fuente
-                    </a>
-                    -->
-                  </div>
-                </div>
+      <!-- Filtros de proyectos -->
+      <div class="d-flex justify-content-center mb-4">
+        <div class="btn-group" role="group" aria-label="Filtros de proyectos">
+          <input type="radio" class="btn-check" name="project-filter" id="filter-all" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="filter-all">Todos</label>
+
+          <input type="radio" class="btn-check" name="project-filter" id="filter-laravel" autocomplete="off">
+          <label class="btn btn-outline-primary" for="filter-laravel">Laravel</label>
+
+          <input type="radio" class="btn-check" name="project-filter" id="filter-angular" autocomplete="off">
+          <label class="btn btn-outline-primary" for="filter-angular">Angular</label>
+
+          <input type="radio" class="btn-check" name="project-filter" id="filter-spring" autocomplete="off">
+          <label class="btn btn-outline-primary" for="filter-spring">Spring Boot</label>
+        </div>
+      </div>
+
+      <div class="row g-4" id="projects-grid">
+        <!-- Proyecto Laravel con React -->
+        <div class="col-lg-6 col-xl-4 project-card" data-category="laravel react">
+          <div class="card bg-secondary text-white h-100">
+            <div class="ratio ratio-16x9 position-relative">
+              <div class="video-loading">
+                <i class="fas fa-spinner fa-spin"></i>
               </div>
-              <div class="col-md-5 mb-3 mx-1">
-                <div class="card bg-secondary text-white">
-                  <div class="ratio ratio-16x9">
-                    <iframe class="border-0" src="https://www.youtube.com/embed/OR6bJr5oOG8"
-                      title="Proyecto de filamentphp de manera practica y conociendo la herramienta (Sergio David)"
-                      allowfullscreen></iframe>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Proyecto de FilamentPHP de manera práctica</h5>
-                    <p class="card-text">
-                      Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
-                      principales funcionalidades y ventajas para la gestión de datos en aplicaciones Laravel.
-                    </p>
-                    <div class="mb-3">
-                      <span class="badge bg-primary me-2">Laravel</span>
-                      <span class="badge bg-info me-2">FilamentPHP</span>
-                      <span class="badge bg-warning me-2">PHP</span>
-                      <span class="badge bg-success me-2">Panel Admin</span>
-                    </div>
-                    <div class="mb-3">
-                      <h6 class="text-info">Características principales:</h6>
-                      <ul class="small">
-                        <li>Gestión CRUD de recursos</li>
-                        <li>Interfaz moderna y personalizable</li>
-                        <li>Filtros y búsquedas avanzadas</li>
-                        <li>Integración rápida con Laravel</li>
-                      </ul>
-                    </div>
-                    <!-- Si tienes un repositorio, agrega el enlace aquí -->
-                    <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn btn-outline-light btn-sm"
-                      target="_blank">
-                      <i class="fab fa-github"></i> Código Fuente
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
+              <iframe class="border-0" data-src="https://www.youtube.com/embed/wdlS3RbDNjA"
+                title="Proyecto Laravel con React - Gestión de inventos y financiación" allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
             </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="row justify-content-center">
-              <div class="col-md-5 mb-3 mx-1">
-                <div class="card bg-secondary text-white">
-                  <div class="ratio ratio-16x9">
-                    <iframe class="border-0" src="https://www.youtube.com/embed/ccEx0ti5pVA" title="Carrito Angular"
-                      allowfullscreen></iframe>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Carro de compras con Angular</h5>
-                    <p class="card-text">Implementación de un carrito de compras completo utilizando Angular y Redux
-                      (@ngrx/store) para la gestión del estado global.</p>
-                    <div class="mb-3">
-                      <span class="badge bg-primary me-2">Angular</span>
-                      <span class="badge bg-info me-2">Redux</span>
-                      <span class="badge bg-warning me-2">TypeScript</span>
-                      <span class="badge bg-success me-2">RxJS</span>
-                    </div>
-                    <div class="mb-3">
-                      <h6 class="text-info">Características principales:</h6>
-                      <ul class="small">
-                        <li>Gestión de estado con Redux</li>
-                        <li>Carrito de compras persistente</li>
-                      </ul>
-                    </div>
-                    <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn btn-outline-light btn-sm"
-                      target="_blank">
-                      <i class="fab fa-github"></i> Código Fuente
-                    </a>
-                  </div>
-                </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Proyecto Laravel con React</h5>
+              <p class="card-text flex-grow-1">
+                Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
+                robusta de nivel empresarial con panel administrativo avanzado.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-primary me-2">Laravel</span>
+                <span class="badge bg-info me-2">React</span>
+                <span class="badge bg-warning me-2">PHP</span>
+                <span class="badge bg-success me-2">Panel Admin</span>
               </div>
-
-
-              <div class="col-md-5 mb-3 mx-1">
-                <div class="card bg-secondary text-white">
-                  <div class="ratio ratio-16x9">
-                    <iframe class="border-0" src="https://www.youtube.com/embed/5JYtO72YSCY" title="Control de usuarios"
-                      allowfullscreen></iframe>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Control de usuarios</h5>
-                    <p class="card-text">Sistema completo de gestión de usuarios con autenticación y autorización,
-                      desarrollado con arquitectura de microservicios.</p>
-                    <div class="mb-3">
-                      <span class="badge bg-primary me-2">Angular</span>
-                      <span class="badge bg-danger me-2">Spring Boot</span>
-                      <span class="badge bg-info me-2">MySQL</span>
-                      <span class="badge bg-warning me-2">Redux</span>
-                      <span class="badge bg-success me-2">JWT</span>
-                    </div>
-                    <div class="mb-3">
-                      <h6 class="text-info">Características principales:</h6>
-                      <ul class="small">
-                        <li>Autenticación con JWT</li>
-                        <li>CRUD completo de usuarios</li>
-                        <li>Roles y permisos</li>
-                        <li>API RESTful</li>
-                        <li>Base de datos relacional</li>
-                      </ul>
-                    </div>
-                    <a href="https://github.com/53R610-D4V1D/users-backend" class="btn btn-outline-light btn-sm"
-                      target="_blank">
-                      <i class="fab fa-github"></i> Código Fuente
-                    </a>
-                  </div>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-light btn-sm me-2" onclick="toggleProjectDetails(this)">
+                  <i class="fas fa-info-circle"></i> Detalles
+                </a>
+                <div class="project-details" style="display: none;">
+                  <h6 class="text-info mt-2">Características principales:</h6>
+                  <ul class="small mb-2">
+                    <li>Gestión de inventos y solicitudes de financiación</li>
+                    <li>Panel administrativo con control de roles y permisos</li>
+                    <li>Diseño de tablas dinámicas y presentación intuitiva</li>
+                    <li>Integración Laravel + React</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
 
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+        <!-- Proyecto FilamentPHP -->
+        <div class="col-lg-6 col-xl-4 project-card" data-category="laravel filament">
+          <div class="card bg-secondary text-white h-100">
+            <div class="ratio ratio-16x9 position-relative">
+              <div class="video-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+              <iframe class="border-0" data-src="https://www.youtube.com/embed/OR6bJr5oOG8"
+                title="Proyecto de FilamentPHP de manera práctica y conociendo la herramienta (Sergio David)"
+                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Proyecto de FilamentPHP</h5>
+              <p class="card-text flex-grow-1">
+                Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
+                principales funcionalidades para la gestión de datos en Laravel.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-primary me-2">Laravel</span>
+                <span class="badge bg-info me-2">FilamentPHP</span>
+                <span class="badge bg-warning me-2">PHP</span>
+              </div>
+              <div class="mt-auto">
+                <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn btn-outline-light btn-sm me-2" target="_blank">
+                  <i class="fab fa-github"></i> Código
+                </a>
+                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
+                  <i class="fas fa-info-circle"></i> Detalles
+                </a>
+                <div class="project-details" style="display: none;">
+                  <h6 class="text-info mt-2">Características principales:</h6>
+                  <ul class="small mb-2">
+                    <li>Gestión CRUD de recursos</li>
+                    <li>Interfaz moderna y personalizable</li>
+                    <li>Filtros y búsquedas avanzadas</li>
+                    <li>Integración rápida con Laravel</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrito Angular -->
+        <div class="col-lg-6 col-xl-4 project-card" data-category="angular redux">
+          <div class="card bg-secondary text-white h-100">
+            <div class="ratio ratio-16x9 position-relative">
+              <div class="video-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+              <iframe class="border-0" data-src="https://www.youtube.com/embed/ccEx0ti5pVA" title="Carrito Angular - Implementación completa con Redux"
+                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Carro de compras con Angular</h5>
+              <p class="card-text flex-grow-1">
+                Implementación de un carrito de compras completo utilizando Angular y Redux
+                (@ngrx/store) para la gestión del estado global de manera eficiente.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-primary me-2">Angular</span>
+                <span class="badge bg-info me-2">Redux</span>
+                <span class="badge bg-warning me-2">TypeScript</span>
+              </div>
+              <div class="mt-auto">
+                <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn btn-outline-light btn-sm me-2" target="_blank">
+                  <i class="fab fa-github"></i> Código
+                </a>
+                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
+                  <i class="fas fa-info-circle"></i> Detalles
+                </a>
+                <div class="project-details" style="display: none;">
+                  <h6 class="text-info mt-2">Características principales:</h6>
+                  <ul class="small mb-2">
+                    <li>Gestión de estado con Redux</li>
+                    <li>Carrito de compras persistente</li>
+                    <li>RxJS para operaciones asíncronas</li>
+                    <li>Interfaz responsiva</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Control de usuarios -->
+        <div class="col-lg-6 col-xl-4 project-card" data-category="angular spring mysql">
+          <div class="card bg-secondary text-white h-100">
+            <div class="ratio ratio-16x9 position-relative">
+              <div class="video-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+              <iframe class="border-0" data-src="https://www.youtube.com/embed/5JYtO72YSCY" title="Control de usuarios - Sistema completo con Angular y Spring Boot"
+                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Control de usuarios</h5>
+              <p class="card-text flex-grow-1">
+                Sistema completo de gestión de usuarios con autenticación y autorización,
+                desarrollado con arquitectura de microservicios moderna.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-primary me-2">Angular</span>
+                <span class="badge bg-danger me-2">Spring Boot</span>
+                <span class="badge bg-info me-2">MySQL</span>
+                <span class="badge bg-success me-2">JWT</span>
+              </div>
+              <div class="mt-auto">
+                <a href="https://github.com/53R610-D4V1D/users-backend" class="btn btn-outline-light btn-sm me-2" target="_blank">
+                  <i class="fab fa-github"></i> Código
+                </a>
+                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
+                  <i class="fas fa-info-circle"></i> Detalles
+                </a>
+                <div class="project-details" style="display: none;">
+                  <h6 class="text-info mt-2">Características principales:</h6>
+                  <ul class="small mb-2">
+                    <li>Autenticación con JWT</li>
+                    <li>CRUD completo de usuarios</li>
+                    <li>Roles y permisos avanzados</li>
+                    <li>API RESTful</li>
+                    <li>Base de datos relacional MySQL</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -616,7 +660,7 @@
                 Boot</h5>
               <p class="card-text">Capacitación intensiva para desarrollar aplicaciones web modernas con backend y
                 frontend desacoplados.</p>
-              <a href="asset\angular_spring.pdf" class="btn btn-outline-light btn-sm" target="_blank">
+              <a href="asset/angular_spring.pdf" class="btn btn-outline-light btn-sm" target="_blank">
                 <i class="fas fa-file-pdf me-1"></i> Ver Certificado
               </a>
             </div>
@@ -677,6 +721,87 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    // Video loading optimization and project filtering
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide loading spinners when videos are loaded
+      const iframes = document.querySelectorAll('iframe[onload]');
+      iframes.forEach(iframe => {
+        if (iframe.complete) {
+          iframe.classList.add('loaded');
+          const loading = iframe.parentElement.querySelector('.video-loading');
+          if (loading) loading.style.display = 'none';
+        }
+      });
+
+      // Project filtering functionality
+      const filterButtons = document.querySelectorAll('input[name="project-filter"]');
+      filterButtons.forEach(button => {
+        button.addEventListener('change', function() {
+          const filter = this.id.replace('filter-', '');
+          filterProjects(filter);
+        });
+      });
+
+      // Load videos when they come into view
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target.querySelector('iframe[data-src]');
+            if (iframe && !iframe.src) {
+              iframe.src = iframe.getAttribute('data-src');
+              iframe.removeAttribute('data-src');
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe all project cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+
+    // Function to handle video load events
+    function onVideoLoad(iframe) {
+      iframe.classList.add('loaded');
+      const loading = iframe.parentElement.querySelector('.video-loading');
+      if (loading) loading.style.display = 'none';
+    }
+
+    // Function to filter projects
+    function filterProjects(filter) {
+      const projects = document.querySelectorAll('.project-card');
+      projects.forEach(project => {
+        if (filter === 'all') {
+          project.style.display = 'block';
+        } else {
+          const categories = project.getAttribute('data-category').split(' ');
+          if (categories.includes(filter)) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    // Function to toggle project details
+    function toggleProjectDetails(button) {
+      const details = button.nextElementSibling;
+      if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        button.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar';
+      } else {
+        details.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-info-circle"></i> Detalles';
+      }
+    }
   </script>
 </body>
 
