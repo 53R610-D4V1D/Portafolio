@@ -6,118 +6,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Sergio David Sepúlveda Montoya — Desarrollador full stack con experiencia en Laravel, Angular, Spring Boot, React y bases de datos.">
   <title>Portafolio — Sergio David Sepúlveda | Desarrollador Full Stack</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #00adb5;
-      --primary-hover: #00d4dd;
-      --secondary: #2a2a2a;
-      --dark: #121212;
-      --light: #f1f1f1;
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00adb5',
+            'primary-hover': '#00d4dd',
+          },
+          fontFamily: {
+            sans: ['Outfit', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(0,173,181,.18), 0 18px 50px rgba(0,173,181,.12)',
+          }
+        }
+      }
     }
-
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+  <style>
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 76px;
+      scroll-padding-top: 88px;
     }
 
     body {
-      background: var(--dark);
-      color: var(--light);
-      font-family: 'Outfit', sans-serif;
-      transition: all 0.3s ease;
+      background: #020617;
+      color: #f1f5f9;
+      font-family: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    section {
-      padding: 80px 0;
+    ::selection {
+      background: rgba(0, 173, 181, 0.28);
     }
 
-    .navbar {
-      background-color: rgba(18, 18, 18, 0.92);
-      backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-
-    .navbar-toggler {
-      border-color: rgba(0, 173, 181, 0.5);
-      padding: 0.4rem 0.6rem;
-    }
-
-    .navbar-toggler:focus {
-      box-shadow: 0 0 0 0.2rem rgba(0, 173, 181, 0.35);
-    }
-
-    .navbar-toggler-icon {
-      filter: invert(1);
-      opacity: 0.9;
-    }
-
-    .navbar-brand,
-    .nav-link {
-      color: var(--light) !important;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--primary) !important;
-      transform: translateY(-2px);
-    }
-
-    .nav-link:focus-visible,
-    .btn:focus-visible,
-    a:focus-visible {
-      outline: 2px solid var(--primary);
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #00adb5;
       outline-offset: 2px;
     }
 
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    .container-app {
+      width: 100%;
+      max-width: 72rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .surface {
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+    }
+
+    .surface-hover {
+      transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .surface-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 173, 181, 0.5);
+      box-shadow: 0 0 0 1px rgba(0, 173, 181, .18), 0 18px 50px rgba(0, 173, 181, .12);
+    }
+
+    .btn-ghost,
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 0.75rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.02);
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 173, 181, 0.4);
+      background: rgba(255, 255, 255, 0.04);
+      color: #e2e8f0;
+    }
+
+    .btn-primary {
+      border: 1px solid rgba(0, 173, 181, 0.25);
+      background: #00adb5;
+      color: #020617;
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #00d4dd;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(0, 173, 181, 0.9);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    .subtle-link {
+      color: #00adb5;
+      text-decoration: none;
+      text-underline-offset: 4px;
+    }
+
+    .subtle-link:hover {
+      color: #00d4dd;
+      text-decoration: underline;
+    }
+
+    .page-glow {
       position: relative;
-      overflow: hidden;
+      isolation: isolate;
     }
 
-    .hero::before {
+    .page-glow::before,
+    .page-glow::after {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at center, rgba(0, 173, 181, 0.1) 0%, transparent 70%);
+      position: fixed;
+      inset: -20vh -20vw;
       pointer-events: none;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      text-shadow: 0 0 10px rgba(0, 173, 181, 0.3);
+      z-index: -1;
+      opacity: 0.75;
+      background:
+        radial-gradient(650px 420px at 18% 14%, rgba(0, 173, 181, 0.18), transparent 55%),
+        radial-gradient(520px 340px at 86% 22%, rgba(0, 173, 181, 0.12), transparent 55%),
+        radial-gradient(520px 340px at 70% 78%, rgba(0, 173, 181, 0.10), transparent 60%);
+      filter: blur(0px);
     }
 
     .typing-wrap {
       min-height: 2.2rem;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
     }
 
     .typing {
-      font-size: 1.4rem;
-      color: var(--primary);
-      font-weight: 500;
-      text-shadow: 0 0 12px rgba(0, 173, 181, 0.35);
-      border-right: 3px solid var(--primary);
+      font-size: 1.05rem;
+      color: #00adb5;
+      font-weight: 600;
+      text-shadow: 0 0 14px rgba(0, 173, 181, 0.35);
+      border-right: 3px solid #00adb5;
       white-space: nowrap;
       overflow: hidden;
       display: inline-block;
-      animation: typing 2.2s steps(22) 0.5s forwards, blink 0.6s step-end infinite;
+      animation: typing 2.1s steps(18) 0.35s forwards, blink 0.6s step-end infinite;
       width: 0;
       max-width: 100%;
     }
@@ -130,701 +206,670 @@
       50% { border-color: transparent; }
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin-top: 2rem;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
     .video-loading {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: var(--primary);
+      color: #00adb5;
       font-size: 1.5rem;
     }
 
-    .ratio-16x9 iframe {
+    iframe {
       transition: opacity 0.3s ease;
     }
 
-    .ratio-16x9 iframe.loaded {
+    iframe.loaded {
       opacity: 1;
     }
 
-    .ratio-16x9 iframe:not(.loaded) {
+    iframe:not(.loaded) {
       opacity: 0;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      border-color: var(--primary);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      border-color: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
-    }
-
-    .btn-outline-light {
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline-light:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-    }
-
-    .profile-pic {
-      width: 250px;
-      height: 250px;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
-      transition: all 0.3s ease;
-      object-fit: cover;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(0, 173, 181, 0.5);
-    }
-
-    .card {
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 173, 181, 0.1);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 173, 181, 0.2);
-      border-color: var(--primary);
-    }
-
-    .list-group-item {
-      transition: all 0.3s ease;
-    }
-
-    .list-group-item:hover {
-      background-color: rgba(0, 173, 181, 0.1) !important;
-      transform: translateX(5px);
-    }
-
-    .border-bottom {
-      border-bottom: 2px solid var(--primary) !important;
-    }
-
-    .text-info {
-      color: var(--primary) !important;
-    }
-
-    .btn-back-top {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: none;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(0, 173, 181, 0.4);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-
-    .btn-back-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .btn-back-top:hover {
-      background: var(--primary-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 24px rgba(0, 173, 181, 0.5);
-    }
-
-    .section-title {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
     }
   </style>
 
 </head>
 
-<body>
+<body class="page-glow">
 
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#inicio">Sergio David Sepúlveda</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <!-- Top bar -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur">
+    <div class="container-app flex items-center justify-between py-3">
+      <a href="#inicio" class="text-sm font-semibold tracking-tight text-slate-100 hover:text-primary transition">
+        Sergio David Sepúlveda
+      </a>
+
+      <button id="navToggle" type="button"
+        class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.02] p-2 text-slate-100 transition hover:border-primary/40 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
+        aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+        </svg>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+
+      <nav id="navMenu" class="hidden md:block" aria-label="Navegación principal">
+        <ul class="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#inicio">Inicio</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#experiencia">Experiencia</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#proyectos">Proyectos</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#habilidades">Habilidades</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#educacion">Educación</a></li>
+          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="navMenuMobile" class="hidden border-t border-white/5 bg-slate-950/85 backdrop-blur md:hidden">
+      <div class="container-app py-3">
+        <ul class="flex flex-col gap-2">
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#inicio">Inicio</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#experiencia">Experiencia</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#proyectos">Proyectos</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#habilidades">Habilidades</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#educacion">Educación</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero" id="inicio">
-    <div class="container" data-aos="fade-up">
-      <img src="asset/perfil_3.jpg" alt="Sergio David Sepúlveda - Desarrollador full stack" class="profile-pic rounded-circle mb-4" width="250" height="250">
+  <!-- Hero -->
+  <main>
+    <section id="inicio" class="relative overflow-hidden pt-28">
+      <div class="container-app" data-aos="fade-up">
+        <div class="grid items-center gap-10 md:grid-cols-12 md:gap-12">
+          <div class="md:col-span-7">
+            <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
+              Sergio David Sepúlveda Montoya
+            </h1>
 
-      <h1 class="section-title">Sergio David Sepúlveda Montoya</h1>
-      <div class="typing-wrap mb-3"><p class="typing mb-0">Desarrollador full stack</p></div>
-      <a href="asset/sergio_david_sepulveda_montoya_(cv).pdf" class="btn btn-outline-light me-2" download
-        target="_blank"><i class="fa-solid fa-download"></i> Descargar CV</a>
-      <!-- Botones con iconos -->
-      <div class="mt-3">
-        <a href="#contacto" class="btn btn-outline-light me-2">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank"
-          class="btn btn-outline-light me-2">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/53R610-D4V1D" target="_blank" class="btn btn-outline-light">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-      </div>
-    </div>
-  </section>
+            <div class="typing-wrap mt-3">
+              <p class="typing mb-0">Backend Developer</p>
+            </div>
 
-  <section id="sobre-mi" class="py-5">
-    <div class="container" data-aos="fade-right">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h2 class="mb-4 fw-bold border-bottom pb-2">👨‍💻 Sobre mí</h2>
-          <p class="lead">
-            Soy un desarrollador con experiencia en la construcción de aplicaciones web modernas.
-            Con una base sólida en tecnologías frontend y backend, creo soluciones escalables que resuelven problemas
-            del mundo real.
-          </p>
-        </div>
-        <div class="col-md-6">
-          <div class="shadow-lg rounded overflow-hidden">
-            <div class="ratio ratio-21x9 position-relative">
-              <div class="video-loading">
-                <i class="fas fa-spinner fa-spin"></i>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#contacto" class="btn-primary">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+              <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="btn-ghost">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/53R610-D4V1D" target="_blank" class="btn-ghost">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-5">
+            <div class="relative mx-auto w-full max-w-sm">
+              <div class="surface p-3 shadow-glow">
+                <div class="relative overflow-hidden rounded-2xl border border-primary/30 bg-slate-900/40">
+                  <img src="asset/perfil_1.png" alt="Sergio David Sepúlveda - Desarrollador full stack"
+                    class="h-[320px] w-full object-cover object-center md:h-[360px]" width="250" height="250">
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-slate-950/30 via-transparent to-primary/10"></div>
+                </div>
               </div>
-              <iframe class="border-0" src="https://www.youtube.com/embed/QP7TrNcYnns" title="Video de presentación - Sergio David Sepúlveda"
-                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
+              <div class="pointer-events-none absolute -inset-6 -z-10 rounded-[28px] bg-primary/10 blur-2xl"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
+      <div class="container-app pb-14 pt-12">
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      </div>
+    </section>
 
-  <section id="experiencia" class="bg-dark">
-    <div class="container" data-aos="fade-up">
-      <h2 class="mb-5 fw-bold border-bottom pb-2">💼 Experiencia Profesional</h2>
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-right">
+        <div class="grid items-start gap-8 md:grid-cols-12 md:gap-10">
+          <div class="md:col-span-5">
+            <h2 class="section-title">👨‍💻 Sobre mí</h2>
+            <p class="mt-4 text-base leading-relaxed text-slate-200/85">
+              Soy un desarrollador backend orientado a producto, acostumbrado a trabajar con dominios de negocio
+              complejos, integraciones entre servicios y bases de datos relacionales. Disfruto diseñar APIs claras,
+              cuidar el modelo de datos y asegurar que las soluciones sean mantenibles, seguras y fáciles de escalar
+              con el tiempo.
+            </p>
+            <p class="mt-4 text-base leading-relaxed text-slate-200/85">
+              Combino buenas prácticas de ingeniería (pruebas, documentación y revisión de código) con una mirada
+              cercana al usuario final, para que cada feature tenga impacto real en el día a día del negocio.
+            </p>
+          </div>
 
-      <div class="row g-4">
+          <div class="md:col-span-7">
+            <div class="surface surface-hover overflow-hidden">
+              <div class="relative flex aspect-[21/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-slate-950 via-slate-900 to-primary/20 px-6 text-center">
+                <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/40 text-primary shadow-lg shadow-primary/25">
+                  <i class="fas fa-play text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">Video presentación</p>
+                  <p class="mt-2 text-sm text-slate-200/85 max-w-xl mx-auto">
+                    Una breve presentación donde cuento cómo trabajo, qué tipo de proyectos disfruto construir y cómo
+                    encaro los desafíos técnicos en el día a día.
+                  </p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=QP7TrNcYnns" target="_blank" rel="noopener noreferrer" class="btn-ghost px-4 py-2 text-xs">
+                  <i class="fas fa-play-circle"></i> Ver video de presentación
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Serviunix S.A.S -->
-        <div class="col-12">
-          <div class="card bg-dark text-white shadow-lg border-0">
-            <div class="card-body">
-              <h4 class="fw-bold mb-3">Desarrollador aplicaciones Web - Serviunix S.A.S</h4>
-              <p class="mb-2">
-                <i class="fas fa-calendar-alt me-2"></i>
+    <!-- Experiencia -->
+    <section id="experiencia" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-up">
+        <h2 class="section-title">💼 Experiencia Profesional</h2>
+
+        <div class="mt-8 grid gap-6">
+          <!-- Serviunix S.A.S -->
+          <article class="surface surface-hover p-6 md:p-8">
+            <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <h3 class="text-lg font-bold tracking-tight md:text-xl">Desarrollador aplicaciones Web - Serviunix S.A.S</h3>
+              <p class="text-sm text-slate-200/75">
+                <i class="fas fa-calendar-alt mr-2 text-primary/90"></i>
                 <strong>Febrero 2021 - Diciembre 2024</strong>
               </p>
+            </div>
 
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <h5 class="text-info"> Proyectos Principales</h5>
-                  <ul class="list-unstyled">
-                    <li><strong>Satori:</strong> Sistema de gestión clínica e inventario.</li>
-                    <li><strong>Ecologística:</strong> Plataforma logística para residuos.</li>
-                    <li><strong>SuVenta:</strong> Control de inventario y facturación.</li>
-                    <li><strong>SuDriver:</strong> Gestión de conductores y vehículos.</li>
-                  </ul>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <h5 class="text-info">⚙️ Responsabilidades </h5>
-                  <ul class="list-unstyled">
-                    <li>Desarrollo frontend y backend de sistemas personalizados.</li>
-                    <li>Implementación de bases de datos SQL con consultas optimizadas.</li>
-                    <li>Participación en análisis funcional, pruebas y despliegue.</li>
-                    <li>Soporte técnico a usuarios y documentación técnica.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="mt-3">
-                <strong class="d-block mb-2">Tecnologías:</strong>
-                <ul class="list-inline mb-0">
-                  <li class="list-inline-item me-3">
-                    <i class="fab fa-php text-info"></i> PHP
-                  </li>
-                  <li class="list-inline-item me-3">
-                    <i class="fab fa-laravel text-danger"></i> Laravel
-                  </li>
-                  <li class="list-inline-item me-3">
-                    <i class="fab fa-js-square text-warning"></i> JavaScript
-                  </li>
-                  <li class="list-inline-item me-3">
-                    <i class="fas fa-database text-light"></i> SQL
-                  </li>
-                  <li class="list-inline-item me-3">
-                    <i class="fab fa-bootstrap text-primary"></i> Bootstrap
-                  </li>
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <h4 class="font-semibold text-primary/95">Proyectos Principales</h4>
+                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                  <li><strong>Satori:</strong> Sistema de gestión clínica e inventario.</li>
+                  <li><strong>Ecologística:</strong> Plataforma logística para residuos.</li>
+                  <li><strong>SuVenta:</strong> Control de inventario y facturación.</li>
+                  <li><strong>SuDriver:</strong> Gestión de conductores y vehículos.</li>
                 </ul>
               </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section id="proyectos" class="py-5">
-    <div class="container" data-aos="fade-up">
-      <h2 class="mb-5 fw-bold border-bottom pb-2 section-title">🚀 Proyectos Destacados</h2>
-
-      <!-- Filtros de proyectos -->
-      <div class="d-flex justify-content-center mb-4">
-        <div class="btn-group" role="group" aria-label="Filtros de proyectos">
-          <input type="radio" class="btn-check" name="project-filter" id="filter-all" autocomplete="off" checked>
-          <label class="btn btn-outline-light" for="filter-all">
-            <i class="fas fa-th-large me-1"></i>Todos
-          </label>
-
-          <input type="radio" class="btn-check" name="project-filter" id="filter-laravel" autocomplete="off">
-          <label class="btn btn-outline-light" for="filter-laravel">
-            <i class="fab fa-laravel me-1"></i>Laravel
-          </label>
-
-          <input type="radio" class="btn-check" name="project-filter" id="filter-angular" autocomplete="off">
-          <label class="btn btn-outline-light" for="filter-angular">
-            <i class="fab fa-angular me-1"></i>Angular
-          </label>
-
-          <input type="radio" class="btn-check" name="project-filter" id="filter-spring" autocomplete="off">
-          <label class="btn btn-outline-light" for="filter-spring">
-            <i class="fab fa-java me-1"></i>Spring Boot
-          </label>
-        </div>
-      </div>
-
-      <div class="row g-4" id="projects-grid">
-        <!-- Proyecto Laravel con React -->
-        <div class="col-lg-6 col-xl-4 project-card" data-category="laravel react">
-          <div class="card bg-secondary text-white h-100">
-            <div class="ratio ratio-16x9 position-relative">
-              <div class="video-loading">
-                <i class="fas fa-spinner fa-spin"></i>
-              </div>
-              <iframe class="border-0" data-src="https://www.youtube.com/embed/wdlS3RbDNjA"
-                title="Proyecto Laravel con React - Gestión de inventos y financiación" allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Proyecto Laravel con React</h5>
-              <p class="card-text flex-grow-1">
-                Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
-                robusta de nivel empresarial con panel administrativo avanzado.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-primary me-2">Laravel</span>
-                <span class="badge bg-info me-2">React</span>
-                <span class="badge bg-warning me-2">PHP</span>
-                <span class="badge bg-success me-2">Panel Admin</span>
-              </div>
-              <div class="mt-auto">
-                <a href="#" class="btn btn-outline-light btn-sm me-2" onclick="toggleProjectDetails(this)">
-                  <i class="fas fa-info-circle"></i> Detalles
-                </a>
-                <div class="project-details" style="display: none;">
-                  <h6 class="text-info mt-2">Características principales:</h6>
-                  <ul class="small mb-2">
-                    <li>Gestión de inventos y solicitudes de financiación</li>
-                    <li>Panel administrativo con control de roles y permisos</li>
-                    <li>Diseño de tablas dinámicas y presentación intuitiva</li>
-                    <li>Integración Laravel + React</li>
-                  </ul>
-                </div>
+              <div>
+                <h4 class="font-semibold text-primary/95">⚙️ Responsabilidades</h4>
+                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                  <li>Desarrollo frontend y backend de sistemas personalizados.</li>
+                  <li>Implementación de bases de datos SQL con consultas optimizadas.</li>
+                  <li>Participación en análisis funcional, pruebas y despliegue.</li>
+                  <li>Soporte técnico a usuarios y documentación técnica.</li>
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Proyecto FilamentPHP -->
-        <div class="col-lg-6 col-xl-4 project-card" data-category="laravel filament">
-          <div class="card bg-secondary text-white h-100">
-            <div class="ratio ratio-16x9 position-relative">
-              <div class="video-loading">
-                <i class="fas fa-spinner fa-spin"></i>
-              </div>
-              <iframe class="border-0" data-src="https://www.youtube.com/embed/OR6bJr5oOG8"
-                title="Proyecto de FilamentPHP de manera práctica y conociendo la herramienta (Sergio David)"
-                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
+            <div class="mt-6">
+              <strong class="block text-sm text-slate-200/85">Tecnologías:</strong>
+              <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-200/85">
+                <li><i class="fab fa-php text-primary/90"></i> PHP</li>
+                <li><i class="fab fa-laravel text-red-400"></i> Laravel</li>
+                <li><i class="fab fa-js-square text-amber-300"></i> JavaScript</li>
+                <li><i class="fas fa-database text-slate-200/80"></i> SQL</li>
+                <li><i class="fab fa-bootstrap text-indigo-300"></i> Bootstrap</li>
+              </ul>
             </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Proyecto de FilamentPHP</h5>
-              <p class="card-text flex-grow-1">
-                Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
-                principales funcionalidades para la gestión de datos en Laravel.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-primary me-2">Laravel</span>
-                <span class="badge bg-info me-2">FilamentPHP</span>
-                <span class="badge bg-warning me-2">PHP</span>
-              </div>
-              <div class="mt-auto">
-                <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn btn-outline-light btn-sm me-2" target="_blank">
-                  <i class="fab fa-github"></i> Código
-                </a>
-                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
-                  <i class="fas fa-info-circle"></i> Detalles
-                </a>
-                <div class="project-details" style="display: none;">
-                  <h6 class="text-info mt-2">Características principales:</h6>
-                  <ul class="small mb-2">
-                    <li>Gestión CRUD de recursos</li>
-                    <li>Interfaz moderna y personalizable</li>
-                    <li>Filtros y búsquedas avanzadas</li>
-                    <li>Integración rápida con Laravel</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Carrito Angular -->
-        <div class="col-lg-6 col-xl-4 project-card" data-category="angular redux">
-          <div class="card bg-secondary text-white h-100">
-            <div class="ratio ratio-16x9 position-relative">
-              <div class="video-loading">
-                <i class="fas fa-spinner fa-spin"></i>
-              </div>
-              <iframe class="border-0" data-src="https://www.youtube.com/embed/ccEx0ti5pVA" title="Carrito Angular - Implementación completa con Redux"
-                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Carro de compras con Angular</h5>
-              <p class="card-text flex-grow-1">
-                Implementación de un carrito de compras completo utilizando Angular y Redux
-                (@ngrx/store) para la gestión del estado global de manera eficiente.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-primary me-2">Angular</span>
-                <span class="badge bg-info me-2">Redux</span>
-                <span class="badge bg-warning me-2">TypeScript</span>
-              </div>
-              <div class="mt-auto">
-                <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn btn-outline-light btn-sm me-2" target="_blank">
-                  <i class="fab fa-github"></i> Código
-                </a>
-                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
-                  <i class="fas fa-info-circle"></i> Detalles
-                </a>
-                <div class="project-details" style="display: none;">
-                  <h6 class="text-info mt-2">Características principales:</h6>
-                  <ul class="small mb-2">
-                    <li>Gestión de estado con Redux</li>
-                    <li>Carrito de compras persistente</li>
-                    <li>RxJS para operaciones asíncronas</li>
-                    <li>Interfaz responsiva</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Control de usuarios -->
-        <div class="col-lg-6 col-xl-4 project-card" data-category="angular spring mysql">
-          <div class="card bg-secondary text-white h-100">
-            <div class="ratio ratio-16x9 position-relative">
-              <div class="video-loading">
-                <i class="fas fa-spinner fa-spin"></i>
-              </div>
-              <iframe class="border-0" data-src="https://www.youtube.com/embed/5JYtO72YSCY" title="Control de usuarios - Sistema completo con Angular y Spring Boot"
-                allowfullscreen loading="lazy" onload="onVideoLoad(this)"></iframe>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Control de usuarios</h5>
-              <p class="card-text flex-grow-1">
-                Sistema completo de gestión de usuarios con autenticación y autorización,
-                desarrollado con arquitectura de microservicios moderna.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-primary me-2">Angular</span>
-                <span class="badge bg-danger me-2">Spring Boot</span>
-                <span class="badge bg-info me-2">MySQL</span>
-                <span class="badge bg-success me-2">JWT</span>
-              </div>
-              <div class="mt-auto">
-                <a href="https://github.com/53R610-D4V1D/users-backend" class="btn btn-outline-light btn-sm me-2" target="_blank">
-                  <i class="fab fa-github"></i> Código
-                </a>
-                <a href="#" class="btn btn-outline-light btn-sm" onclick="toggleProjectDetails(this)">
-                  <i class="fas fa-info-circle"></i> Detalles
-                </a>
-                <div class="project-details" style="display: none;">
-                  <h6 class="text-info mt-2">Características principales:</h6>
-                  <ul class="small mb-2">
-                    <li>Autenticación con JWT</li>
-                    <li>CRUD completo de usuarios</li>
-                    <li>Roles y permisos avanzados</li>
-                    <li>API RESTful</li>
-                    <li>Base de datos relacional MySQL</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="habilidades" class="bg-dark text-white py-5">
-    <div class="container" data-aos="fade-left">
-      <h2 class="mb-5 fw-bold border-bottom pb-2">🛠️ Habilidades Técnicas</h2>
-      <div class="row g-4">
-
-        <!-- Lenguajes -->
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-dark rounded shadow-sm h-100 border border-secondary">
-            <h5 class="fw-bold mb-3 text-light"><i class="fas fa-code me-2"></i>Lenguajes</h5>
-            <div class="d-flex flex-column gap-2">
-              <div class="d-flex align-items-center">
-                <i class="fab fa-php text-light me-2"></i>
-                <span class="text-light">PHP</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fab fa-js text-light me-2"></i>
-                <span class="text-light">JavaScript</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fab fa-java text-light me-2"></i>
-                <span class="text-light">Java</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-file-code text-info me-2"></i>
-                <span class="text-light">TypeScript</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Frameworks -->
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-dark rounded shadow-sm h-100 border border-secondary">
-            <h5 class="fw-bold mb-3 text-light"><i class="fas fa-layer-group me-2"></i>Frameworks</h5>
-            <div class="d-flex flex-column gap-2">
-              <div class="d-flex align-items-center">
-                <i class="fab fa-laravel text-danger me-2"></i>
-                <span class="text-light">Laravel</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fab fa-angular text-danger me-2"></i>
-                <span class="text-light">Angular</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fab fa-react text-info me-2"></i>
-                <span class="text-light">React</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-leaf text-success me-2"></i>
-                <span class="text-light">Spring Boot</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bases de datos -->
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-dark rounded shadow-sm h-100 border border-secondary">
-            <h5 class="fw-bold mb-3 text-light"><i class="fas fa-database me-2"></i>Bases de datos</h5>
-            <div class="d-flex flex-column gap-2">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-database text-light me-2"></i>
-                <span class="text-light">MySQL</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-database text-light me-2"></i>
-                <span class="text-light">SQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Herramientas -->
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-dark rounded shadow-sm h-100 border border-secondary">
-            <h5 class="fw-bold mb-3 text-light"><i class="fas fa-tools me-2"></i>Herramientas</h5>
-            <div class="d-flex flex-column gap-2">
-              <div class="d-flex align-items-center">
-                <i class="fab fa-git-alt text-light me-2"></i>
-                <span class="text-light">Git</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- educacion -->
-  <section id="educacion" class="py-5">
-    <div class="container" data-aos="fade-up">
-      <h2 class="mb-5 fw-bold border-bottom pb-2">🎓 Educación</h2>
-
-      <div class="row g-4">
-
-        <!-- Ingeniero de Software -->
-        <div class="col-md-4">
-          <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
-            <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-graduation-cap me-2"></i>Ingeniero de Software
-              </h5>
-              <p class="card-text">Formación universitaria enfocada en arquitectura de software, metodologías ágiles y
-                desarrollo full stack.</p>
-              <a href="asset/ingeniero.pdf" class="btn btn-outline-light btn-sm" target="_blank">
-                <i class="fas fa-file-pdf me-1"></i> Ver Título
+            <div class="mt-6">
+              <a href="asset/carta_recomedacion/13-01-2025CARTA DAVID .pdf" target="_blank" class="btn-ghost px-3 py-2 text-xs">
+                <i class="fas fa-file-signature"></i> Ver carta de recomendación
               </a>
             </div>
-          </div>
+          </article>
         </div>
-
-        <!-- Tecnólogo en Análisis y Desarrollo -->
-        <div class="col-md-4">
-          <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
-            <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-laptop-code me-2"></i>Tecnólogo en Análisis y
-                Desarrollo</h5>
-              <p class="card-text">Enfoque práctico en análisis, diseño e implementación de sistemas de información.</p>
-              <a href="asset/tecnologo.pdf" class="btn btn-outline-light btn-sm" target="_blank">
-                <i class="fas fa-file-pdf me-1"></i> Ver Título
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Curso Angular & Spring Boot -->
-        <div class="col-md-4">
-          <div class="card bg-dark text-white h-100 shadow-sm border border-secondary">
-            <div class="card-body">
-              <h5 class="card-title fw-bold text-light"><i class="fas fa-certificate me-2"></i>Curso Angular & Spring
-                Boot</h5>
-              <p class="card-text">Capacitación intensiva para desarrollar aplicaciones web modernas con backend y
-                frontend desacoplados.</p>
-              <a href="asset/angular_spring.pdf" class="btn btn-outline-light btn-sm" target="_blank">
-                <i class="fas fa-file-pdf me-1"></i> Ver Certificado
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- contacto -->
-  <section id="contacto" class="py-5 bg-dark text-white">
-    <div class="container" data-aos="fade-up">
-      <h2 class="mb-4 text-center fw-bold border-bottom pb-2">📞 Contacto</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="p-4 bg-dark rounded shadow-sm border border-secondary">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-dark text-white d-flex align-items-center border-secondary">
-                <i class="fas fa-phone-alt me-3"></i> +57 314 589 9773
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-up">
+        <h2 class="section-title">🚀 Proyectos Destacados</h2>
+
+        <!-- Filtros -->
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-2">
+          <input type="radio" class="peer/all sr-only" name="project-filter" id="filter-all" autocomplete="off" checked>
+          <label for="filter-all"
+            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/all:border-primary/60 peer-checked/all:text-primary">
+            <i class="fas fa-th-large mr-2"></i>Todos
+          </label>
+
+          <input type="radio" class="peer/laravel sr-only" name="project-filter" id="filter-laravel" autocomplete="off">
+          <label for="filter-laravel"
+            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/laravel:border-primary/60 peer-checked/laravel:text-primary">
+            <i class="fab fa-laravel mr-2"></i>Laravel
+          </label>
+
+          <input type="radio" class="peer/angular sr-only" name="project-filter" id="filter-angular" autocomplete="off">
+          <label for="filter-angular"
+            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/angular:border-primary/60 peer-checked/angular:text-primary">
+            <i class="fab fa-angular mr-2"></i>Angular
+          </label>
+
+          <input type="radio" class="peer/spring sr-only" name="project-filter" id="filter-spring" autocomplete="off">
+          <label for="filter-spring"
+            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/spring:border-primary/60 peer-checked/spring:text-primary">
+            <i class="fab fa-java mr-2"></i>Spring Boot
+          </label>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3" id="projects-grid">
+          <!-- Proyecto Laravel con React -->
+          <div class="project-card" data-category="laravel react">
+            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
+              <div class="relative aspect-video w-full bg-slate-900/40">
+                <div class="video-loading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/wdlS3RbDNjA"
+                  title="Proyecto Laravel con React - Gestión de inventos y financiación" allowfullscreen loading="lazy"
+                  onload="onVideoLoad(this)"></iframe>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-bold tracking-tight">Proyecto Laravel con React</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                  Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
+                  robusta de nivel empresarial con panel administrativo avanzado.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">React</span>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Panel Admin</span>
+                </div>
+                <div class="mt-5">
+                  <div class="flex flex-wrap gap-2">
+                    <a href="https://www.youtube.com/watch?v=wdlS3RbDNjA" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
+                      <i class="fas fa-play"></i> Ver video
+                    </a>
+                    <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                      <i class="fas fa-info-circle"></i> Detalles
+                    </button>
+                  </div>
+                  <div class="project-details mt-4 hidden" style="display: none;">
+                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                      <li>Gestión de inventos y solicitudes de financiación</li>
+                      <li>Panel administrativo con control de roles y permisos</li>
+                      <li>Diseño de tablas dinámicas y presentación intuitiva</li>
+                      <li>Integración Laravel + React</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto FilamentPHP -->
+          <div class="project-card" data-category="laravel filament">
+            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
+              <div class="relative aspect-video w-full bg-slate-900/40">
+                <div class="video-loading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/OR6bJr5oOG8"
+                  title="Proyecto de FilamentPHP de manera práctica y conociendo la herramienta (Sergio David)" allowfullscreen
+                  loading="lazy" onload="onVideoLoad(this)"></iframe>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-bold tracking-tight">Proyecto de FilamentPHP</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                  Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
+                  principales funcionalidades para la gestión de datos en Laravel.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">FilamentPHP</span>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                    <i class="fab fa-github"></i> Código
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=OR6bJr5oOG8" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-play"></i> Ver video
+                  </a>
+                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-info-circle"></i> Detalles
+                  </button>
+                  <div class="project-details mt-4 w-full hidden" style="display: none;">
+                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                      <li>Gestión CRUD de recursos</li>
+                      <li>Interfaz moderna y personalizable</li>
+                      <li>Filtros y búsquedas avanzadas</li>
+                      <li>Integración rápida con Laravel</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carrito Angular -->
+          <div class="project-card" data-category="angular redux">
+            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
+              <div class="relative aspect-video w-full bg-slate-900/40">
+                <div class="video-loading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/ccEx0ti5pVA"
+                  title="Carrito Angular - Implementación completa con Redux" allowfullscreen loading="lazy"
+                  onload="onVideoLoad(this)"></iframe>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-bold tracking-tight">Carro de compras con Angular</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                  Implementación de un carrito de compras completo utilizando Angular y Redux
+                  (@ngrx/store) para la gestión del estado global de manera eficiente.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">Redux</span>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">TypeScript</span>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                    <i class="fab fa-github"></i> Código
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=ccEx0ti5pVA" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-play"></i> Ver video
+                  </a>
+                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-info-circle"></i> Detalles
+                  </button>
+                  <div class="project-details mt-4 w-full hidden" style="display: none;">
+                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                      <li>Gestión de estado con Redux</li>
+                      <li>Carrito de compras persistente</li>
+                      <li>RxJS para operaciones asíncronas</li>
+                      <li>Interfaz responsiva</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Control de usuarios -->
+          <div class="project-card" data-category="angular spring mysql">
+            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
+              <div class="relative aspect-video w-full bg-slate-900/40">
+                <div class="video-loading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/5JYtO72YSCY"
+                  title="Control de usuarios - Sistema completo con Angular y Spring Boot" allowfullscreen loading="lazy"
+                  onload="onVideoLoad(this)"></iframe>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-bold tracking-tight">Control de usuarios</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                  Sistema completo de gestión de usuarios con autenticación y autorización,
+                  desarrollado con arquitectura de microservicios moderna.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
+                  <span class="rounded-full bg-rose-400/15 px-3 py-1 font-semibold text-rose-300">Spring Boot</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">MySQL</span>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">JWT</span>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <a href="https://github.com/53R610-D4V1D/users-backend" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                    <i class="fab fa-github"></i> Código
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=5JYtO72YSCY" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-play"></i> Ver video
+                  </a>
+                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-info-circle"></i> Detalles
+                  </button>
+                  <div class="project-details mt-4 w-full hidden" style="display: none;">
+                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                      <li>Autenticación con JWT</li>
+                      <li>CRUD completo de usuarios</li>
+                      <li>Roles y permisos avanzados</li>
+                      <li>API RESTful</li>
+                      <li>Base de datos relacional MySQL</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-left">
+        <h2 class="section-title">🛠️ Habilidades Técnicas</h2>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Lenguajes -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-code mr-2 text-primary/90"></i>Lenguajes</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fab fa-php text-slate-200/80"></i><span>PHP</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-js text-slate-200/80"></i><span>JavaScript</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-java text-slate-200/80"></i><span>Java</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-file-code text-primary/90"></i><span>TypeScript</span></div>
+            </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-layer-group mr-2 text-primary/90"></i>Frameworks</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fab fa-laravel text-red-400"></i><span>Laravel</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-angular text-red-400"></i><span>Angular</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-react text-sky-300"></i><span>React</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-leaf text-emerald-300"></i><span>Spring Boot</span></div>
+            </div>
+          </div>
+
+          <!-- Bases de datos -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-database mr-2 text-primary/90"></i>Bases de datos</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>MySQL</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>SQL</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>PostgreSQL</span></div>
+            </div>
+          </div>
+
+          <!-- Herramientas -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-tools mr-2 text-primary/90"></i>Herramientas</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fab fa-git-alt text-slate-200/80"></i><span>Git</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-github text-slate-200/80"></i><span>GitHub</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-docker text-slate-200/80"></i><span>Docker</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-robot text-slate-200/80"></i><span>IA generativa</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educación -->
+    <section id="educacion" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-up">
+        <h2 class="section-title">🎓 Educación</h2>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Ingeniero de Software -->
+          <article class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-graduation-cap mr-2 text-primary/90"></i>Ingeniero de Software</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              Formación universitaria enfocada en arquitectura de software, metodologías ágiles y desarrollo full stack.
+            </p>
+            <div class="mt-5">
+              <a href="asset/ingeniero.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Título
+              </a>
+            </div>
+          </article>
+
+          <!-- Tecnólogo en Análisis y Desarrollo -->
+          <article class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-laptop-code mr-2 text-primary/90"></i>Tecnólogo en Análisis y Desarrollo</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              Enfoque práctico en análisis, diseño e implementación de sistemas de información.
+            </p>
+            <div class="mt-5">
+              <a href="asset/tecnologo.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Título
+              </a>
+            </div>
+          </article>
+
+          <!-- Curso Angular & Spring Boot -->
+          <article class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-certificate mr-2 text-primary/90"></i>Curso Angular & Spring Boot</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              Capacitación intensiva para desarrollar aplicaciones web modernas con backend y frontend desacoplados.
+            </p>
+            <div class="mt-5">
+              <a href="asset/angular_spring.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Certificado
+              </a>
+            </div>
+          </article>
+
+          <!-- Ventas y atención al cliente -->
+          <article class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100">
+              <i class="fas fa-handshake mr-2 text-primary/90"></i>Ventas y atención al cliente
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              Formación orientada a la comunicación con clientes, gestión de objeciones y construcción de relaciones de
+              largo plazo, útil para entender mejor el contexto de negocio detrás de cada proyecto.
+            </p>
+            <div class="mt-5">
+              <a href="asset/titulos/Ventas y atención al cliente.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Certificado
+              </a>
+            </div>
+          </article>
+
+          <!-- Habilidades comunicativas para presentaciones en público -->
+          <article class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100">
+              <i class="fas fa-microphone-alt mr-2 text-primary/90"></i>Habilidades comunicativas para presentaciones en público
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              Curso centrado en estructurar mensajes claros, presentar ideas técnicas a personas no técnicas y mejorar
+              la confianza al exponer resultados de proyectos.
+            </p>
+            <div class="mt-5">
+              <a href="asset/titulos/Habilidades comunicativas para presentaciones en público.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Certificado
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-16 md:py-20">
+      <div class="container-app" data-aos="fade-up">
+        <h2 class="text-center section-title">📞 Contacto</h2>
+
+        <div class="mx-auto mt-8 max-w-2xl">
+          <div class="surface p-6 md:p-8">
+            <ul class="divide-y divide-white/10">
+              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+                <i class="fas fa-phone-alt text-primary/90"></i>
+                <span>+57 314 589 9773</span>
               </li>
-              <li class="list-group-item bg-dark text-white d-flex align-items-center border-secondary">
-                <i class="fas fa-envelope me-3"></i>
-                <a href="mailto:sergiose534@gmail.com" class="text-white text-decoration-none">sergiose534@gmail.com</a>
+              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+                <i class="fas fa-envelope text-primary/90"></i>
+                <a href="mailto:sergiose534@gmail.com" class="subtle-link">sergiose534@gmail.com</a>
               </li>
-              <li class="list-group-item bg-dark text-white d-flex align-items-center border-secondary">
-                <i class="fab fa-linkedin me-3"></i>
-                <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank"
-                  class="text-white text-decoration-none">
+              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+                <i class="fab fa-linkedin text-primary/90"></i>
+                <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="subtle-link">
                   linkedin.com/in/sergio-david-sepulveda...
                 </a>
               </li>
-              <li class="list-group-item bg-dark text-white d-flex align-items-center border-secondary">
-                <i class="fab fa-github me-3"></i>
-                <a href="https://github.com/53R610-D4V1D" target="_blank" class="text-white text-decoration-none">
+              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+                <i class="fab fa-github text-primary/90"></i>
+                <a href="https://github.com/53R610-D4V1D" target="_blank" class="subtle-link">
                   github.com/53R610-D4V1D
                 </a>
               </li>
             </ul>
 
-            <div class="mt-4 text-center">
-              <a href="mailto:sergiose534@gmail.com" class="btn btn-outline-light me-2">
+            <div class="mt-6 flex justify-center">
+              <a href="mailto:sergiose534@gmail.com" class="btn-primary">
                 <i class="fas fa-paper-plane"></i> Enviarme un correo
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <button type="button" class="btn-back-top" id="btnBackTop" aria-label="Volver arriba">
+  <button type="button" id="btnBackTop" aria-label="Volver arriba"
+    class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-slate-950 shadow-glow transition opacity-0 pointer-events-none translate-y-2 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <footer class="bg-dark text-center text-white py-4 border-top border-secondary">
-    <p class="mb-0">&copy; 2025 <a href="#inicio">Sergio David Sepúlveda</a>. Todos los derechos reservados.</p>
+  <footer class="border-t border-white/10 py-8">
+    <div class="container-app text-center text-sm text-slate-200/75">
+      <p class="mb-0">&copy; 2025 <a class="subtle-link" href="#inicio">Sergio David Sepúlveda</a>. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
 
-    // Video loading optimization and project filtering
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('navToggle');
+      const navMenuMobile = document.getElementById('navMenuMobile');
+      const navMenuDesktop = document.getElementById('navMenu');
+
+      if (navToggle && navMenuMobile) {
+        navToggle.addEventListener('click', function () {
+          const isOpen = !navMenuMobile.classList.contains('hidden');
+          navMenuMobile.classList.toggle('hidden');
+          navToggle.setAttribute('aria-expanded', String(!isOpen));
+          navToggle.setAttribute('aria-label', !isOpen ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        navMenuMobile.querySelectorAll('a[href^="#"]').forEach(a => {
+          a.addEventListener('click', () => {
+            navMenuMobile.classList.add('hidden');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Abrir menú');
+          });
+        });
+      }
+
+      if (navMenuDesktop) {
+        navMenuDesktop.querySelectorAll('a[href^="#"]').forEach(a => {
+          a.addEventListener('click', () => {
+            if (navMenuMobile && !navMenuMobile.classList.contains('hidden')) {
+              navMenuMobile.classList.add('hidden');
+              if (navToggle) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Abrir menú');
+              }
+            }
+          });
+        });
+      }
+
       // Hide loading spinners when videos are loaded
       const iframes = document.querySelectorAll('iframe[onload]');
       iframes.forEach(iframe => {
@@ -838,7 +883,7 @@
       // Project filtering functionality
       const filterButtons = document.querySelectorAll('input[name="project-filter"]');
       filterButtons.forEach(button => {
-        button.addEventListener('change', function() {
+        button.addEventListener('change', function () {
           const filter = this.id.replace('filter-', '');
           filterProjects(filter);
         });
@@ -862,20 +907,17 @@
         });
       }, observerOptions);
 
-      // Observe all project cards
       document.querySelectorAll('.project-card').forEach(card => {
         observer.observe(card);
       });
     });
 
-    // Function to handle video load events
     function onVideoLoad(iframe) {
       iframe.classList.add('loaded');
       const loading = iframe.parentElement.querySelector('.video-loading');
       if (loading) loading.style.display = 'none';
     }
 
-    // Function to filter projects
     function filterProjects(filter) {
       const projects = document.querySelectorAll('.project-card');
       projects.forEach(project => {
@@ -892,7 +934,6 @@
       });
     }
 
-    // Function to toggle project details
     function toggleProjectDetails(button) {
       const details = button.nextElementSibling;
       if (details.style.display === 'none' || details.style.display === '') {
@@ -904,17 +945,18 @@
       }
     }
 
-    // Back to top button
     const btnBackTop = document.getElementById('btnBackTop');
     if (btnBackTop) {
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         if (window.scrollY > 400) {
-          btnBackTop.classList.add('visible');
+          btnBackTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+          btnBackTop.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
         } else {
-          btnBackTop.classList.remove('visible');
+          btnBackTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+          btnBackTop.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
         }
       });
-      btnBackTop.addEventListener('click', function() {
+      btnBackTop.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
