@@ -329,38 +329,71 @@
     <!-- Sobre mí -->
     <section id="sobre-mi" class="py-16 md:py-20">
       <div class="container-app" data-aos="fade-right">
-        <div class="grid items-start gap-8 md:grid-cols-12 md:gap-10">
-          <div class="md:col-span-5">
-            <h2 class="section-title">👨‍💻 Sobre mí</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-200/85">
-              Soy un desarrollador backend orientado a producto, acostumbrado a trabajar con dominios de negocio
-              complejos, integraciones entre servicios y bases de datos relacionales. Disfruto diseñar APIs claras,
-              cuidar el modelo de datos y asegurar que las soluciones sean mantenibles, seguras y fáciles de escalar
-              con el tiempo.
+        <h2 class="section-title mb-8">👨‍💻 Sobre mí</h2>
+        
+        <!-- Descripción principal -->
+        <div class="surface p-6 md:p-8 mb-6">
+          <h3 class="text-lg font-bold text-primary/95 mb-4">Ingeniero de Software y Desarrollador Backend</h3>
+          <div class="space-y-4 text-base leading-relaxed text-slate-200/85">
+            <p>
+              Con más de <strong class="text-primary">3 años de experiencia</strong> transformando procesos manuales en soluciones digitales escalables. 
+              Mi enfoque no es solo escribir código, sino <strong>optimizar el rendimiento del negocio</strong>; como cuando reduje tiempos de 
+              respuesta en reportes críticos de <strong class="text-primary">20 a 5 minutos</strong> mediante refactorización técnica en SQL.
             </p>
-            <p class="mt-4 text-base leading-relaxed text-slate-200/85">
-              Combino buenas prácticas de ingeniería (pruebas, documentación y revisión de código) con una mirada
-              cercana al usuario final, para que cada feature tenga impacto real en el día a día del negocio.
+            <p>
+              He crecido profesionalmente en entornos de <strong>Metodología Scrum</strong>, donde gestioné flujos de trabajo de alta exigencia 
+              desarrollando en <strong class="text-primary">PHP/Laravel</strong> y brindando soporte técnico directo para resolver incidencias de nivel 2 y 3.
+            </p>
+            <p>
+              Actualmente, estoy evolucionando mi stack hacia <strong class="text-primary">Java y Spring Boot</strong>, integrando 
+              <strong>Inteligencia Artificial</strong> en mi flujo diario para entregar software más seguro, documentado y en tiempos récord. 
+              Creo firmemente que <em class="text-primary/90">la tecnología debe ser invisible para el usuario pero potente en sus resultados</em>.
             </p>
           </div>
+        </div>
 
-          <div class="md:col-span-7">
-            <div class="surface surface-hover overflow-hidden">
-              <div class="relative flex aspect-[21/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-slate-950 via-slate-900 to-primary/20 px-6 text-center">
-                <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/40 text-primary shadow-lg shadow-primary/25">
-                  <i class="fas fa-play text-xl"></i>
-                </div>
-                <div>
-                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">Video presentación</p>
-                  <p class="mt-2 text-sm text-slate-200/85 max-w-xl mx-auto">
-                    Una breve presentación donde cuento cómo trabajo, qué tipo de proyectos disfruto construir y cómo
-                    encaro los desafíos técnicos en el día a día.
-                  </p>
-                </div>
-                <a href="https://www.youtube.com/watch?v=QP7TrNcYnns" target="_blank" rel="noopener noreferrer" class="btn-ghost px-4 py-2 text-xs">
-                  <i class="fas fa-play-circle"></i> Ver video de presentación
-                </a>
+        <!-- Grid con características y video -->
+        <div class="grid gap-6 md:grid-cols-2">
+          <!-- Características clave -->
+          <div class="surface p-6">
+            <h4 class="text-sm font-bold text-slate-100 mb-4">
+              <i class="fas fa-rocket mr-2 text-primary/90"></i>Lo que me define
+            </h4>
+            <ul class="space-y-3 text-sm text-slate-200/85">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary/90 mt-1"></i>
+                <span><strong>Orientado a resultados:</strong> Optimización de procesos y reducción de tiempos de respuesta</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary/90 mt-1"></i>
+                <span><strong>Trabajo ágil:</strong> Experiencia en Scrum Teams con alta productividad</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary/90 mt-1"></i>
+                <span><strong>Stack en evolución:</strong> De Laravel a Spring Boot, siempre aprendiendo</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary/90 mt-1"></i>
+                <span><strong>IA como aliada:</strong> Integración de herramientas de IA para mayor eficiencia</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Video presentación -->
+          <div class="surface surface-hover overflow-hidden">
+            <div class="relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-slate-950 via-slate-900 to-primary/20 px-6 text-center">
+              <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/40 text-primary shadow-lg shadow-primary/25">
+                <i class="fas fa-play text-xl"></i>
               </div>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">Video presentación</p>
+                <p class="mt-2 text-xs text-slate-200/85 max-w-md mx-auto">
+                  Conóceme en acción: cómo abordo proyectos, mi filosofía de desarrollo y los desafíos técnicos que más disfruto resolver.
+                </p>
+              </div>
+              <a href="https://www.youtube.com/watch?v=QP7TrNcYnns" target="_blank" rel="noopener noreferrer" class="btn-ghost px-4 py-2 text-xs">
+                <i class="fas fa-play-circle"></i> Ver presentación
+              </a>
             </div>
           </div>
         </div>
@@ -396,10 +429,11 @@
               <div>
                 <h4 class="font-semibold text-primary/95">⚙️ Responsabilidades</h4>
                 <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
-                  <li>Desarrollo frontend y backend de sistemas personalizados.</li>
-                  <li>Implementación de bases de datos SQL con consultas optimizadas.</li>
-                  <li>Participación en análisis funcional, pruebas y despliegue.</li>
-                  <li>Soporte técnico a usuarios y documentación técnica.</li>
+                  <li><strong>Optimización de Rendimiento SQL:</strong> Reduje los tiempos de generación de informes críticos de 20 a 5 minutos mediante la refactorización de consultas Eloquent a SQL nativo, asegurando eficiencia en la exportación de datos para el proyecto "Ecologista SAS".</li>
+                  <li><strong>Automatización de Procesos Logísticos:</strong> Digitalicé sistemas basados en papel físico mediante la creación de formularios complejos y la automatización de órdenes de servicio, incluyendo lógica para la asignación de vehículos según capacidad y tipo de residuo.</li>
+                  <li><strong>Desarrollo de APIs para Mobile:</strong> Diseñé y construí APIs robustas consumidas por aplicaciones en React Native para la gestión y validación de listas de chequeo en tiempo real.</li>
+                  <li><strong>Soporte Técnico Especializado (Nivel 2/3):</strong> Brindé atención directa a clientes estratégicos mediante soporte telefónico, resolviendo incidencias técnicas, gestionando roles de usuario y ejecutando consultas SQL bajo demanda para la generación de reportes personalizados.</li>
+                  <li><strong>Gestión bajo Metodología Scrum:</strong> Participé activamente en Scrum Teams, cumpliendo con alto nivel de productividad en el desarrollo de features para el backend (Laravel) y frontend (Blade).</li>
                 </ul>
               </div>
             </div>
@@ -409,6 +443,7 @@
               <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-200/85">
                 <li><i class="fab fa-php text-primary/90"></i> PHP</li>
                 <li><i class="fab fa-laravel text-red-400"></i> Laravel</li>
+                <li><i class="fab fa-laravel text-red-400"></i> Blade</li>
                 <li><i class="fab fa-js-square text-amber-300"></i> JavaScript</li>
                 <li><i class="fas fa-database text-slate-200/80"></i> SQL</li>
                 <li><i class="fab fa-bootstrap text-indigo-300"></i> Bootstrap</li>
@@ -692,6 +727,15 @@
               <div class="flex items-center gap-2"><i class="fab fa-github text-slate-200/80"></i><span>GitHub</span></div>
               <div class="flex items-center gap-2"><i class="fab fa-docker text-slate-200/80"></i><span>Docker</span></div>
               <div class="flex items-center gap-2"><i class="fas fa-robot text-slate-200/80"></i><span>IA generativa</span></div>
+            </div>
+          </div>
+
+          <!-- Metodologías -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-project-diagram mr-2 text-primary/90"></i>Metodologías</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fas fa-sync text-slate-200/80"></i><span>Scrum</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-chart-line text-slate-200/80"></i><span>Trabajo bajo objetivos (KPIs de tiempo/minutos)</span></div>
             </div>
           </div>
         </div>
