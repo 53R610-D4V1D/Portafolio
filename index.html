@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Sergio David Sepúlveda Montoya — Desarrollador full stack con experiencia en Laravel, Angular, Spring Boot, React y bases de datos.">
   <title>Portafolio — Sergio David Sepúlveda | Desarrollador Full Stack</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,6 +225,140 @@
 
     iframe:not(.loaded) {
       opacity: 0;
+    }
+
+    .modal-gallery {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-gallery.hidden {
+      display: none;
+    }
+
+    .modal-image-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a2e;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(0, 173, 181, 0.3);
+      box-shadow: 0 0 60px rgba(0, 173, 181, 0.2);
+      overflow: hidden;
+      max-width: 90vw;
+      max-height: 80vh;
+    }
+
+    .modal-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 640px) {
+      .modal-image-container {
+        max-width: 95vw;
+        max-height: 60vh;
+        border-width: 1px;
+      }
+
+      .modal-gallery .nav-btn {
+        position: fixed;
+        top: auto;
+        bottom: 1rem;
+        transform: none;
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .modal-gallery .nav-btn.prev {
+        left: 1rem;
+      }
+
+      .modal-gallery .nav-btn.next {
+        right: 1rem;
+      }
+
+      .modal-gallery .nav-btn.prev,
+      .modal-gallery .nav-btn.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .modal-gallery .nav-btn.prev {
+        left: 0.25rem;
+      }
+
+      .modal-gallery .nav-btn.next {
+        right: 0.25rem;
+      }
+
+      .modal-counter {
+        bottom: 0.5rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+
+    .modal-gallery .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-10;
+      flex-shrink: 0;
+      background: rgba(0, 173, 181, 0.2);
+      border: 1px solid rgba(0, 173, 181, 0.4);
+    }
+
+    .modal-gallery .nav-btn:hover {
+      background: rgba(0, 173, 181, 0.4);
+    }
+
+    .modal-gallery .nav-btn.prev {
+      left: 1rem;
+    }
+
+    .modal-gallery .nav-btn.next {
+      right: 1rem;
+    }
+
+    .modal-gallery .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-20;
+      background: rgba(239, 68, 68, 0.8);
+      border: none;
+    }
+
+    .modal-gallery .close-btn:hover {
+      background: rgba(239, 68, 68, 1);
+    }
+
+    .modal-counter {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: #00adb5;
+    }
+
+    .modal-gallery .carousel-btn {
+      z-10;
+      flex-shrink: 0;
     }
   </style>
 
@@ -489,6 +623,12 @@
             class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/spring:border-primary/60 peer-checked/spring:text-primary">
             <i class="fab fa-java mr-2"></i>Spring Boot
           </label>
+
+          <input type="radio" class="peer/nextjs sr-only" name="project-filter" id="filter-nextjs" autocomplete="off">
+          <label for="filter-nextjs"
+            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/nextjs:border-primary/60 peer-checked/nextjs:text-primary">
+            <i class="fab fa-nextjs mr-2"></i>Next.js
+          </label>
         </div>
 
         <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3" id="projects-grid">
@@ -677,6 +817,63 @@
               </div>
             </article>
           </div>
+
+          <!-- Activisport -->
+          <div class="project-card" data-category="nextjs">
+            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
+              <div class="relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
+                <div id="carousel-activisport" class="carousel-container flex h-full transition-transform duration-300">
+                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161523.png" alt="Activisport - Dashboard" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161339.png" alt="Activisport - Gestión de alumnos" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161239.png" alt="Activisport - Clases" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161203.png" alt="Activisport - Asistencia" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161147.png" alt="Activisport - Pagos" class="h-full w-full object-cover flex-shrink-0">
+                </div>
+                <button type="button" class="carousel-btn left-2 absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-activisport', -1)">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="carousel-btn right-2 absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-activisport', 1)">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/60 cursor-pointer" onclick="goToSlide('carousel-activisport', 0)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 1)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 2)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 3)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 4)"></span>
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-bold tracking-tight">Activisport</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                  Plataforma web multi-tenant para gestión de academias deportivas con panel admin completo.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-slate-400/15 px-3 py-1 font-semibold text-slate-300">Next.js 16</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">TypeScript</span>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Prisma</span>
+                  <span class="rounded-full bg-indigo-400/15 px-3 py-1 font-semibold text-indigo-300">PostgreSQL</span>
+                </div>
+                <div class="mt-5">
+                  <div class="flex flex-wrap gap-2">
+                    <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                      <i class="fas fa-info-circle"></i> Detalles
+                    </button>
+                  </div>
+                  <div class="project-details mt-4 hidden" style="display: none;">
+                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                      <li>Panel admin para gestionar alumnos, clases, asistencia y pagos</li>
+                      <li>Sistema multi-tenant (varias academias con datos aislados)</li>
+                      <li>Roles y permisos (SUPER_ADMIN, ADMIN, Docente)</li>
+                      <li>Reportes y exportación a Excel</li>
+                      <li>Arquitectura hexagonal + DDD con tests unitarios</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -704,7 +901,7 @@
             <div class="mt-4 space-y-3 text-sm text-slate-200/85">
               <div class="flex items-center gap-2"><i class="fab fa-laravel text-red-400"></i><span>Laravel</span></div>
               <div class="flex items-center gap-2"><i class="fab fa-angular text-red-400"></i><span>Angular</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-react text-sky-300"></i><span>React</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-react text-sky-300"></i><span>React / Next.js</span></div>
               <div class="flex items-center gap-2"><i class="fas fa-leaf text-emerald-300"></i><span>Spring Boot</span></div>
             </div>
           </div>
@@ -726,7 +923,17 @@
               <div class="flex items-center gap-2"><i class="fab fa-git-alt text-slate-200/80"></i><span>Git</span></div>
               <div class="flex items-center gap-2"><i class="fab fa-github text-slate-200/80"></i><span>GitHub</span></div>
               <div class="flex items-center gap-2"><i class="fab fa-docker text-slate-200/80"></i><span>Docker</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-robot text-slate-200/80"></i><span>IA generativa</span></div>
+            </div>
+          </div>
+
+          <!-- IA Generativa -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-robot mr-2 text-primary/90"></i>IA Generativa</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-purple-400"></i><span>Claude Code (CLI)</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-slate-200/80"></i><span>ChatGPT Codex</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-globe text-blue-400"></i><span>Google Stitch</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-slate-200/80"></i><span>Cualquier IA por terminal</span></div>
             </div>
           </div>
 
@@ -954,6 +1161,99 @@
       document.querySelectorAll('.project-card').forEach(card => {
         observer.observe(card);
       });
+
+      // Initialize carousels
+      initCarousel('carousel-activisport');
+    });
+
+    function initCarousel(id) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      container.dataset.currentSlide = '0';
+      updateCarouselDots(id);
+    }
+
+    function moveCarousel(id, direction) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      const images = container.querySelectorAll('img');
+      const count = images.length;
+      let current = parseInt(container.dataset.currentSlide || '0');
+      current = (current + direction + count) % count;
+      container.dataset.currentSlide = current;
+      container.style.transform = `translateX(-${current * 100}%)`;
+      updateCarouselDots(id);
+    }
+
+    function goToSlide(id, index) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      container.dataset.currentSlide = index;
+      container.style.transform = `translateX(-${index * 100}%)`;
+      updateCarouselDots(id);
+    }
+
+    function updateCarouselDots(id) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      const current = parseInt(container.dataset.currentSlide || '0');
+      const dots = container.parentElement.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-white/60', i === current);
+        dot.classList.toggle('bg-white/40', i !== current);
+      });
+    }
+
+    let modalImages = [];
+    let modalCurrentSlide = 0;
+
+    function openModalGallery(element) {
+      const container = element.querySelector('.carousel-container');
+      modalImages = Array.from(container.querySelectorAll('img')).map(img => ({
+        src: img.src,
+        alt: img.alt
+      }));
+      modalCurrentSlide = parseInt(container.dataset.currentSlide || '0');
+      
+      const modalImg = document.getElementById('modal-current-image');
+      modalImg.src = modalImages[modalCurrentSlide].src;
+      modalImg.alt = modalImages[modalCurrentSlide].alt;
+      
+      document.getElementById('modal-total-count').textContent = modalImages.length;
+      
+      const modal = document.getElementById('modal-gallery');
+      modal.classList.remove('hidden');
+      updateModalCounter();
+    }
+
+    function closeModalGallery(event) {
+      if (event && event.target.closest('.nav-btn')) return;
+      const modal = document.getElementById('modal-gallery');
+      modal.classList.add('hidden');
+    }
+
+    function moveModalCarousel(direction, evt) {
+      if (evt) evt.stopPropagation();
+      if (modalImages.length === 0) return;
+      modalCurrentSlide = (modalCurrentSlide + direction + modalImages.length) % modalImages.length;
+      
+      const modalImg = document.getElementById('modal-current-image');
+      modalImg.src = modalImages[modalCurrentSlide].src;
+      modalImg.alt = modalImages[modalCurrentSlide].alt;
+      
+      updateModalCounter();
+    }
+
+    function updateModalCounter() {
+      document.getElementById('modal-current-index').textContent = modalCurrentSlide + 1;
+    }
+
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('modal-gallery');
+      if (modal.classList.contains('hidden')) return;
+      if (e.key === 'ArrowLeft') moveModalCarousel(-1);
+      if (e.key === 'ArrowRight') moveModalCarousel(1);
+      if (e.key === 'Escape') closeModalGallery();
     });
 
     function onVideoLoad(iframe) {
@@ -1005,6 +1305,25 @@
       });
     }
   </script>
+
+  <!-- Modal Gallery -->
+  <div id="modal-gallery" class="modal-gallery hidden" onclick="closeModalGallery(event)">
+    <button type="button" class="close-btn absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full text-white text-xl transition" onclick="closeModalGallery(event)">
+      <i class="fas fa-times"></i>
+    </button>
+    <button type="button" class="nav-btn prev flex h-10 w-10 items-center justify-center rounded-full text-white transition" onclick="moveModalCarousel(-1, event)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="modal-image-container">
+      <img id="modal-current-image" src="" alt="">
+    </div>
+    <button type="button" class="nav-btn next flex h-10 w-10 items-center justify-center rounded-full text-white transition" onclick="moveModalCarousel(1, event)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="modal-counter">
+      <span id="modal-current-index">1</span> / <span id="modal-total-count">5</span>
+    </div>
+  </div>
 </body>
 
 </html>
