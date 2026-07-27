@@ -10,27 +10,35 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
   <script>
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
+    tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#00adb5',
-            'primary-hover': '#00d4dd',
+            primary: '#c2410c',
+            'primary-hover': '#ea580c',
+            cream: '#f7ecd9',
+            'cream-soft': '#efdfc0',
+            paper: '#fffbf2',
+            ink: '#241c15',
+            'ink-soft': '#5b4c3c',
+            'ink-faint': '#8a795f',
+            navy: '#212b46',
+            'navy-soft': '#2c3859',
           },
           fontFamily: {
-            sans: ['Outfit', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif']
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+            display: ['Fredoka', 'ui-rounded', 'system-ui', 'sans-serif']
           },
           boxShadow: {
-            glow: '0 0 0 1px rgba(0,173,181,.18), 0 18px 50px rgba(0,173,181,.12)',
+            glow: '0 0 0 1px rgba(194,65,12,.18), 0 18px 40px rgba(36,28,21,.10)',
           }
         }
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -38,20 +46,20 @@
     }
 
     body {
-      background: #020617;
-      color: #f1f5f9;
-      font-family: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f7ecd9;
+      color: #241c15;
+      font-family: '"Plus Jakarta Sans"', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     ::selection {
-      background: rgba(0, 173, 181, 0.28);
+      background: rgba(194, 65, 12, 0.22);
     }
 
     a:focus-visible,
     button:focus-visible {
-      outline: 2px solid #00adb5;
+      outline: 2px solid #c2410c;
       outline-offset: 2px;
     }
 
@@ -65,10 +73,10 @@
     }
 
     .surface {
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
+      border-radius: 1.25rem;
+      border: 1.5px solid rgba(36, 28, 21, 0.10);
+      background: #fffbf2;
+      box-shadow: 0 1px 2px rgba(36, 28, 21, 0.04), 0 12px 30px -18px rgba(36, 28, 21, 0.25);
     }
 
     .surface-hover {
@@ -77,8 +85,8 @@
 
     .surface-hover:hover {
       transform: translateY(-4px);
-      border-color: rgba(0, 173, 181, 0.5);
-      box-shadow: 0 0 0 1px rgba(0, 173, 181, .18), 0 18px 50px rgba(0, 173, 181, .12);
+      border-color: rgba(194, 65, 12, 0.35);
+      box-shadow: 0 0 0 1px rgba(194, 65, 12, .12), 0 22px 45px -20px rgba(36, 28, 21, .35);
     }
 
     .btn-ghost,
@@ -87,8 +95,8 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      border-radius: 0.75rem;
-      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      padding: 0.5rem 1.15rem;
       font-size: 0.875rem;
       line-height: 1.25rem;
       transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease;
@@ -98,29 +106,29 @@
     }
 
     .btn-ghost {
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.02);
-      color: #f1f5f9;
+      border: 1.5px solid rgba(36, 28, 21, 0.16);
+      background: #fffbf2;
+      color: #241c15;
       font-weight: 600;
     }
 
     .btn-ghost:hover {
       transform: translateY(-2px);
-      border-color: rgba(0, 173, 181, 0.4);
-      background: rgba(255, 255, 255, 0.04);
-      color: #e2e8f0;
+      border-color: rgba(194, 65, 12, 0.45);
+      background: #fdf3e2;
+      color: #c2410c;
     }
 
     .btn-primary {
-      border: 1px solid rgba(0, 173, 181, 0.25);
-      background: #00adb5;
-      color: #020617;
+      border: 1px solid rgba(194, 65, 12, 0.35);
+      background: #c2410c;
+      color: #fff8ec;
       font-weight: 700;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      background: #00d4dd;
+      background: #ea580c;
     }
 
     .section-kicker {
@@ -129,31 +137,33 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: rgba(0, 173, 181, 0.9);
+      color: rgba(194, 65, 12, 0.9);
     }
 
     .section-title {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-family: 'Fredoka', ui-rounded, system-ui, sans-serif;
+      font-size: 1.6rem;
+      line-height: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #241c15;
     }
 
     @media (min-width: 768px) {
       .section-title {
-        font-size: 1.875rem;
-        line-height: 2.25rem;
+        font-size: 2rem;
+        line-height: 2.4rem;
       }
     }
 
     .subtle-link {
-      color: #00adb5;
+      color: #c2410c;
       text-decoration: none;
       text-underline-offset: 4px;
     }
 
     .subtle-link:hover {
-      color: #00d4dd;
+      color: #ea580c;
       text-decoration: underline;
     }
 
@@ -169,27 +179,32 @@
       inset: -20vh -20vw;
       pointer-events: none;
       z-index: -1;
-      opacity: 0.75;
+      opacity: 0.8;
       background:
-        radial-gradient(650px 420px at 18% 14%, rgba(0, 173, 181, 0.18), transparent 55%),
-        radial-gradient(520px 340px at 86% 22%, rgba(0, 173, 181, 0.12), transparent 55%),
-        radial-gradient(520px 340px at 70% 78%, rgba(0, 173, 181, 0.10), transparent 60%);
+        radial-gradient(650px 420px at 16% 10%, rgba(234, 88, 12, 0.14), transparent 55%),
+        radial-gradient(560px 360px at 88% 18%, rgba(33, 43, 70, 0.10), transparent 55%),
+        radial-gradient(560px 360px at 68% 82%, rgba(234, 88, 12, 0.10), transparent 60%);
       filter: blur(0px);
     }
 
     .typing-wrap {
-      min-height: 2.2rem;
-      display: flex;
+      min-height: 2.6rem;
+      display: inline-flex;
       justify-content: flex-start;
       align-items: center;
+      border-radius: 9999px;
+      background: #212b46;
+      padding: 0.4rem 1.1rem;
+      width: fit-content;
     }
 
     .typing {
-      font-size: 1.05rem;
-      color: #00adb5;
-      font-weight: 600;
-      text-shadow: 0 0 14px rgba(0, 173, 181, 0.35);
-      border-right: 3px solid #00adb5;
+      font-size: 0.95rem;
+      color: #f7ecd9;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-right: 3px solid #ea580c;
       white-space: nowrap;
       overflow: hidden;
       display: inline-block;
@@ -211,7 +226,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #00adb5;
+      color: #c2410c;
       font-size: 1.5rem;
     }
 
@@ -246,10 +261,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1a1a2e;
-      border-radius: 0.75rem;
-      border: 2px solid rgba(0, 173, 181, 0.3);
-      box-shadow: 0 0 60px rgba(0, 173, 181, 0.2);
+      background: #1a1610;
+      border-radius: 1rem;
+      border: 2px solid rgba(234, 88, 12, 0.35);
+      box-shadow: 0 0 60px rgba(234, 88, 12, 0.2);
       overflow: hidden;
       max-width: 90vw;
       max-height: 80vh;
@@ -313,14 +328,14 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      z-10;
+      z-index: 10;
       flex-shrink: 0;
-      background: rgba(0, 173, 181, 0.2);
-      border: 1px solid rgba(0, 173, 181, 0.4);
+      background: rgba(234, 88, 12, 0.25);
+      border: 1px solid rgba(234, 88, 12, 0.45);
     }
 
     .modal-gallery .nav-btn:hover {
-      background: rgba(0, 173, 181, 0.4);
+      background: rgba(234, 88, 12, 0.45);
     }
 
     .modal-gallery .nav-btn.prev {
@@ -335,7 +350,7 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      z-20;
+      z-index: 20;
       background: rgba(239, 68, 68, 0.8);
       border: none;
     }
@@ -353,11 +368,11 @@
       padding: 0.5rem 1rem;
       border-radius: 9999px;
       font-size: 0.875rem;
-      color: #00adb5;
+      color: #f7ecd9;
     }
 
     .modal-gallery .carousel-btn {
-      z-10;
+      z-index: 10;
       flex-shrink: 0;
     }
   </style>
@@ -367,47 +382,50 @@
 <body class="page-glow">
 
   <!-- Top bar -->
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-ink/8 bg-cream/85 backdrop-blur">
     <div class="container-app flex items-center justify-between py-3">
-      <a href="#inicio" class="text-sm font-semibold tracking-tight text-slate-100 hover:text-primary transition">
-        Sergio David Sepúlveda
+      <a href="#inicio" class="font-display text-base font-semibold tracking-tight text-ink hover:text-primary transition">
+        Sergio David
       </a>
 
-      <button id="navToggle" type="button"
-        class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.02] p-2 text-slate-100 transition hover:border-primary/40 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
-        aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 6h16" />
-          <path d="M4 12h16" />
-          <path d="M4 18h16" />
-        </svg>
-      </button>
-
-      <nav id="navMenu" class="hidden md:block" aria-label="Navegación principal">
-        <ul class="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#inicio">Inicio</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#sobre-mi">Sobre mí</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#experiencia">Experiencia</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#proyectos">Proyectos</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#habilidades">Habilidades</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#educacion">Educación</a></li>
-          <li><a class="text-sm text-slate-200/90 hover:text-primary transition" href="#contacto">Contacto</a></li>
-        </ul>
+      <nav id="navMenu" class="hidden md:flex items-center gap-0.5 rounded-full border border-ink/10 bg-paper/90 px-1.5 py-1.5 shadow-sm" aria-label="Navegación principal">
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#inicio">Inicio</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#sobre-mi">Sobre mí</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#experiencia">Experiencia</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#proyectos">Proyectos</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#habilidades">Habilidades</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#educacion">Educación</a>
+        <a class="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#contacto">Contacto</a>
       </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#contacto" class="btn-primary hidden sm:inline-flex">
+          Contáctame
+        </a>
+        <button id="navToggle" type="button"
+          class="inline-flex items-center justify-center rounded-xl border border-ink/15 bg-paper p-2 text-ink transition hover:border-primary/40 hover:bg-cream-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
+          aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16" />
+            <path d="M4 12h16" />
+            <path d="M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile menu -->
-    <div id="navMenuMobile" class="hidden border-t border-white/5 bg-slate-950/85 backdrop-blur md:hidden">
+    <div id="navMenuMobile" class="hidden border-t border-ink/8 bg-cream/95 backdrop-blur md:hidden">
       <div class="container-app py-3">
         <ul class="flex flex-col gap-2">
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#inicio">Inicio</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#sobre-mi">Sobre mí</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#experiencia">Experiencia</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#proyectos">Proyectos</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#habilidades">Habilidades</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#educacion">Educación</a></li>
-          <li><a class="block rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.04] hover:text-primary transition" href="#contacto">Contacto</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#inicio">Inicio</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#experiencia">Experiencia</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#proyectos">Proyectos</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#habilidades">Habilidades</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#educacion">Educación</a></li>
+          <li><a class="block rounded-xl px-3 py-2 text-sm text-ink-soft hover:bg-cream-soft hover:text-primary transition" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -417,9 +435,9 @@
   <main>
     <section id="inicio" class="relative overflow-hidden pt-28">
       <div class="container-app" data-aos="fade-up">
-        <div class="grid items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
           <div class="md:col-span-7">
-            <h1 class="text-3xl font-bold tracking-tight md:text-5xl">
+            <h1 class="font-display text-4xl font-semibold tracking-tight text-ink md:text-6xl">
               Sergio David Sepúlveda Montoya
             </h1>
 
@@ -443,10 +461,10 @@
           <div class="md:col-span-5">
             <div class="relative mx-auto w-full max-w-sm">
               <div class="surface p-3 shadow-glow">
-                <div class="relative overflow-hidden rounded-2xl border border-primary/30 bg-slate-900/40">
+                <div class="relative overflow-hidden rounded-2xl border border-primary/30 bg-navy/5">
                   <img src="asset/perfil_1.png" alt="Sergio David Sepúlveda - Desarrollador full stack"
                     class="h-[320px] w-full object-cover object-center md:h-[360px]" width="250" height="250">
-                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-slate-950/30 via-transparent to-primary/10"></div>
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-ink/25 via-transparent to-primary/10"></div>
                 </div>
               </div>
               <div class="pointer-events-none absolute -inset-6 -z-10 rounded-[28px] bg-primary/10 blur-2xl"></div>
@@ -456,7 +474,7 @@
       </div>
 
       <div class="container-app pb-14 pt-12">
-        <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-ink/15 to-transparent"></div>
       </div>
     </section>
 
@@ -468,7 +486,7 @@
         <!-- Descripción principal -->
         <div class="surface p-6 md:p-8 mb-6">
           <h3 class="text-lg font-bold text-primary/95 mb-4">Ingeniero de Software y Desarrollador Backend</h3>
-          <div class="space-y-4 text-base leading-relaxed text-slate-200/85">
+          <div class="space-y-4 text-base leading-relaxed text-ink-soft">
             <p>
               Con más de <strong class="text-primary">3 años de experiencia</strong> transformando procesos manuales en soluciones digitales escalables. 
               Mi enfoque no es solo escribir código, sino <strong>optimizar el rendimiento del negocio</strong>; como cuando reduje tiempos de 
@@ -487,13 +505,13 @@
         </div>
 
         <!-- Grid con características y video -->
-        <div class="grid gap-6 md:grid-cols-2">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <!-- Características clave -->
           <div class="surface p-6">
-            <h4 class="text-sm font-bold text-slate-100 mb-4">
+            <h4 class="text-sm font-bold text-ink mb-4">
               <i class="fas fa-rocket mr-2 text-primary/90"></i>Lo que me define
             </h4>
-            <ul class="space-y-3 text-sm text-slate-200/85">
+            <ul class="space-y-3 text-sm text-ink-soft">
               <li class="flex items-start gap-3">
                 <i class="fas fa-check-circle text-primary/90 mt-1"></i>
                 <span><strong>Orientado a resultados:</strong> Optimización de procesos y reducción de tiempos de respuesta</span>
@@ -515,13 +533,13 @@
 
           <!-- Video presentación -->
           <div class="surface surface-hover overflow-hidden">
-            <div class="relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-slate-950 via-slate-900 to-primary/20 px-6 text-center">
-              <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/40 text-primary shadow-lg shadow-primary/25">
+            <div class="relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-navy via-navy-soft to-primary/40 px-6 text-center">
+              <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/30 text-cream shadow-lg shadow-black/25">
                 <i class="fas fa-play text-xl"></i>
               </div>
               <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">Video presentación</p>
-                <p class="mt-2 text-xs text-slate-200/85 max-w-md mx-auto">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cream/90">Video presentación</p>
+                <p class="mt-2 text-xs text-cream/70 max-w-md mx-auto">
                   Conóceme en acción: cómo abordo proyectos, mi filosofía de desarrollo y los desafíos técnicos que más disfruto resolver.
                 </p>
               </div>
@@ -544,16 +562,16 @@
           <article class="surface surface-hover p-6 md:p-8">
             <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
               <h3 class="text-lg font-bold tracking-tight md:text-xl">Desarrollador aplicaciones Web - Serviunix S.A.S</h3>
-              <p class="text-sm text-slate-200/75">
+              <p class="text-sm text-ink-faint">
                 <i class="fas fa-calendar-alt mr-2 text-primary/90"></i>
                 <strong>Febrero 2021 - Diciembre 2024</strong>
               </p>
             </div>
 
-            <div class="mt-6 grid gap-6 md:grid-cols-2">
+            <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <h4 class="font-semibold text-primary/95">Proyectos Principales</h4>
-                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                <ul class="mt-3 space-y-2 text-sm text-ink-soft">
                   <li><strong>Satori:</strong> Sistema de gestión clínica e inventario.</li>
                   <li><strong>Ecologística:</strong> Plataforma logística para residuos.</li>
                   <li><strong>SuVenta:</strong> Control de inventario y facturación.</li>
@@ -562,7 +580,7 @@
               </div>
               <div>
                 <h4 class="font-semibold text-primary/95">⚙️ Responsabilidades</h4>
-                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                <ul class="mt-3 space-y-2 text-sm text-ink-soft">
                   <li><strong>Optimización de Rendimiento SQL:</strong> Reduje los tiempos de generación de informes críticos de 20 a 5 minutos mediante la refactorización de consultas Eloquent a SQL nativo, asegurando eficiencia en la exportación de datos para el proyecto "Ecologista SAS".</li>
                   <li><strong>Automatización de Procesos Logísticos:</strong> Digitalicé sistemas basados en papel físico mediante la creación de formularios complejos y la automatización de órdenes de servicio, incluyendo lógica para la asignación de vehículos según capacidad y tipo de residuo.</li>
                   <li><strong>Desarrollo de APIs para Mobile:</strong> Diseñé y construí APIs robustas consumidas por aplicaciones en React Native para la gestión y validación de listas de chequeo en tiempo real.</li>
@@ -573,14 +591,14 @@
             </div>
 
             <div class="mt-6">
-              <strong class="block text-sm text-slate-200/85">Tecnologías:</strong>
-              <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-200/85">
+              <strong class="block text-sm text-ink-soft">Tecnologías:</strong>
+              <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft">
                 <li><i class="fab fa-php text-primary/90"></i> PHP</li>
-                <li><i class="fab fa-laravel text-red-400"></i> Laravel</li>
-                <li><i class="fab fa-laravel text-red-400"></i> Blade</li>
-                <li><i class="fab fa-js-square text-amber-300"></i> JavaScript</li>
-                <li><i class="fas fa-database text-slate-200/80"></i> SQL</li>
-                <li><i class="fab fa-bootstrap text-indigo-300"></i> Bootstrap</li>
+                <li><i class="fab fa-laravel text-red-500"></i> Laravel</li>
+                <li><i class="fab fa-laravel text-red-500"></i> Blade</li>
+                <li><i class="fab fa-js-square text-amber-700"></i> JavaScript</li>
+                <li><i class="fas fa-database text-ink-faint"></i> SQL</li>
+                <li><i class="fab fa-bootstrap text-indigo-700"></i> Bootstrap</li>
               </ul>
             </div>
             <div class="mt-6">
@@ -602,40 +620,40 @@
         <div class="mt-7 flex flex-wrap items-center justify-center gap-2">
           <input type="radio" class="peer/all sr-only" name="project-filter" id="filter-all" autocomplete="off" checked>
           <label for="filter-all"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/all:border-primary/60 peer-checked/all:text-primary">
+            class="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition hover:border-primary/40 hover:bg-cream-soft peer-checked/all:border-primary/60 peer-checked/all:text-primary">
             <i class="fas fa-th-large mr-2"></i>Todos
           </label>
 
           <input type="radio" class="peer/laravel sr-only" name="project-filter" id="filter-laravel" autocomplete="off">
           <label for="filter-laravel"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/laravel:border-primary/60 peer-checked/laravel:text-primary">
+            class="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition hover:border-primary/40 hover:bg-cream-soft peer-checked/laravel:border-primary/60 peer-checked/laravel:text-primary">
             <i class="fab fa-laravel mr-2"></i>Laravel
           </label>
 
           <input type="radio" class="peer/angular sr-only" name="project-filter" id="filter-angular" autocomplete="off">
           <label for="filter-angular"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/angular:border-primary/60 peer-checked/angular:text-primary">
+            class="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition hover:border-primary/40 hover:bg-cream-soft peer-checked/angular:border-primary/60 peer-checked/angular:text-primary">
             <i class="fab fa-angular mr-2"></i>Angular
           </label>
 
           <input type="radio" class="peer/spring sr-only" name="project-filter" id="filter-spring" autocomplete="off">
           <label for="filter-spring"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/spring:border-primary/60 peer-checked/spring:text-primary">
+            class="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition hover:border-primary/40 hover:bg-cream-soft peer-checked/spring:border-primary/60 peer-checked/spring:text-primary">
             <i class="fab fa-java mr-2"></i>Spring Boot
           </label>
 
           <input type="radio" class="peer/nextjs sr-only" name="project-filter" id="filter-nextjs" autocomplete="off">
           <label for="filter-nextjs"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/nextjs:border-primary/60 peer-checked/nextjs:text-primary">
+            class="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition hover:border-primary/40 hover:bg-cream-soft peer-checked/nextjs:border-primary/60 peer-checked/nextjs:text-primary">
             <i class="fab fa-nextjs mr-2"></i>Next.js
           </label>
         </div>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3" id="projects-grid">
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" id="projects-grid">
           <!-- Proyecto Laravel con React -->
           <div class="project-card" data-category="laravel react">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
+              <div class="relative aspect-video w-full bg-navy/5">
                 <div class="video-loading">
                   <i class="fas fa-spinner fa-spin"></i>
                 </div>
@@ -644,16 +662,16 @@
                   onload="onVideoLoad(this)"></iframe>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Proyecto Laravel con React</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                <h3 class="font-display text-lg font-semibold tracking-tight text-ink">Proyecto Laravel con React</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                   Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
                   robusta de nivel empresarial con panel administrativo avanzado.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
                   <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">React</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
-                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Panel Admin</span>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-700">React</span>
+                  <span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-700">PHP</span>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-700">Panel Admin</span>
                 </div>
                 <div class="mt-5">
                   <div class="flex flex-wrap gap-2">
@@ -666,7 +684,7 @@
                   </div>
                   <div class="project-details mt-4 hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                       <li>Gestión de inventos y solicitudes de financiación</li>
                       <li>Panel administrativo con control de roles y permisos</li>
                       <li>Diseño de tablas dinámicas y presentación intuitiva</li>
@@ -681,7 +699,7 @@
           <!-- Proyecto FilamentPHP -->
           <div class="project-card" data-category="laravel filament">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
+              <div class="relative aspect-video w-full bg-navy/5">
                 <div class="video-loading">
                   <i class="fas fa-spinner fa-spin"></i>
                 </div>
@@ -690,15 +708,15 @@
                   loading="lazy" onload="onVideoLoad(this)"></iframe>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Proyecto de FilamentPHP</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                <h3 class="font-display text-lg font-semibold tracking-tight text-ink">Proyecto de FilamentPHP</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                   Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
                   principales funcionalidades para la gestión de datos en Laravel.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
                   <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">FilamentPHP</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-700">FilamentPHP</span>
+                  <span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-700">PHP</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
                   <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn-ghost px-3 py-2 text-xs" target="_blank">
@@ -712,7 +730,7 @@
                   </button>
                   <div class="project-details mt-4 w-full hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                       <li>Gestión CRUD de recursos</li>
                       <li>Interfaz moderna y personalizable</li>
                       <li>Filtros y búsquedas avanzadas</li>
@@ -727,7 +745,7 @@
           <!-- Carrito Angular -->
           <div class="project-card" data-category="angular redux">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
+              <div class="relative aspect-video w-full bg-navy/5">
                 <div class="video-loading">
                   <i class="fas fa-spinner fa-spin"></i>
                 </div>
@@ -736,15 +754,15 @@
                   onload="onVideoLoad(this)"></iframe>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Carro de compras con Angular</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                <h3 class="font-display text-lg font-semibold tracking-tight text-ink">Carro de compras con Angular</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                   Implementación de un carrito de compras completo utilizando Angular y Redux
                   (@ngrx/store) para la gestión del estado global de manera eficiente.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
                   <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">Redux</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">TypeScript</span>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-700">Redux</span>
+                  <span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-700">TypeScript</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
                   <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn-ghost px-3 py-2 text-xs" target="_blank">
@@ -758,7 +776,7 @@
                   </button>
                   <div class="project-details mt-4 w-full hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                       <li>Gestión de estado con Redux</li>
                       <li>Carrito de compras persistente</li>
                       <li>RxJS para operaciones asíncronas</li>
@@ -773,7 +791,7 @@
           <!-- Control de usuarios -->
           <div class="project-card" data-category="angular spring mysql">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
+              <div class="relative aspect-video w-full bg-navy/5">
                 <div class="video-loading">
                   <i class="fas fa-spinner fa-spin"></i>
                 </div>
@@ -782,16 +800,16 @@
                   onload="onVideoLoad(this)"></iframe>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Control de usuarios</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                <h3 class="font-display text-lg font-semibold tracking-tight text-ink">Control de usuarios</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                   Sistema completo de gestión de usuarios con autenticación y autorización,
                   desarrollado con arquitectura de microservicios moderna.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
                   <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
-                  <span class="rounded-full bg-rose-400/15 px-3 py-1 font-semibold text-rose-300">Spring Boot</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">MySQL</span>
-                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">JWT</span>
+                  <span class="rounded-full bg-rose-100 px-3 py-1 font-semibold text-rose-700">Spring Boot</span>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-700">MySQL</span>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-700">JWT</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
                   <a href="https://github.com/53R610-D4V1D/users-backend" class="btn-ghost px-3 py-2 text-xs" target="_blank">
@@ -805,7 +823,7 @@
                   </button>
                   <div class="project-details mt-4 w-full hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                       <li>Autenticación con JWT</li>
                       <li>CRUD completo de usuarios</li>
                       <li>Roles y permisos avanzados</li>
@@ -821,7 +839,7 @@
           <!-- Activisport -->
           <div class="project-card" data-category="nextjs">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
+              <div class="relative aspect-video w-full bg-navy/5 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
                 <div id="carousel-activisport" class="carousel-container flex h-full transition-transform duration-300">
                   <img src="asset/activisport/Captura de pantalla 2026-04-22 161523.png" alt="Activisport - Dashboard" class="h-full w-full object-cover flex-shrink-0">
                   <img src="asset/activisport/Captura de pantalla 2026-04-22 161339.png" alt="Activisport - Gestión de alumnos" class="h-full w-full object-cover flex-shrink-0">
@@ -844,15 +862,15 @@
                 </div>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Activisport</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
+                <h3 class="font-display text-lg font-semibold tracking-tight text-ink">Activisport</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                   Plataforma web multi-tenant para gestión de academias deportivas con panel admin completo.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-slate-400/15 px-3 py-1 font-semibold text-slate-300">Next.js 16</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">TypeScript</span>
-                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Prisma</span>
-                  <span class="rounded-full bg-indigo-400/15 px-3 py-1 font-semibold text-indigo-300">PostgreSQL</span>
+                  <span class="rounded-full bg-slate-200 px-3 py-1 font-semibold text-slate-700">Next.js 16</span>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-700">TypeScript</span>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-700">Prisma</span>
+                  <span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-700">PostgreSQL</span>
                 </div>
                 <div class="mt-5">
                   <div class="flex flex-wrap gap-2">
@@ -862,7 +880,7 @@
                   </div>
                   <div class="project-details mt-4 hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                       <li>Panel admin para gestionar alumnos, clases, asistencia y pagos</li>
                       <li>Sistema multi-tenant (varias academias con datos aislados)</li>
                       <li>Roles y permisos (SUPER_ADMIN, ADMIN, Docente)</li>
@@ -883,66 +901,66 @@
       <div class="container-app" data-aos="fade-left">
         <h2 class="section-title">🛠️ Habilidades Técnicas</h2>
 
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <!-- Lenguajes -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-code mr-2 text-primary/90"></i>Lenguajes</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fab fa-php text-slate-200/80"></i><span>PHP</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-js text-slate-200/80"></i><span>JavaScript</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-java text-slate-200/80"></i><span>Java</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-code mr-2 text-primary/90"></i>Lenguajes</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fab fa-php text-ink-faint"></i><span>PHP</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-js text-ink-faint"></i><span>JavaScript</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-java text-ink-faint"></i><span>Java</span></div>
               <div class="flex items-center gap-2"><i class="fas fa-file-code text-primary/90"></i><span>TypeScript</span></div>
             </div>
           </div>
 
           <!-- Frameworks -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-layer-group mr-2 text-primary/90"></i>Frameworks</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fab fa-laravel text-red-400"></i><span>Laravel</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-angular text-red-400"></i><span>Angular</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-react text-sky-300"></i><span>React / Next.js</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-leaf text-emerald-300"></i><span>Spring Boot</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-layer-group mr-2 text-primary/90"></i>Frameworks</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fab fa-laravel text-red-500"></i><span>Laravel</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-angular text-red-500"></i><span>Angular</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-react text-sky-700"></i><span>React / Next.js</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-leaf text-emerald-700"></i><span>Spring Boot</span></div>
             </div>
           </div>
 
           <!-- Bases de datos -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-database mr-2 text-primary/90"></i>Bases de datos</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>MySQL</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>SQL</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-database text-slate-200/80"></i><span>PostgreSQL</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-database mr-2 text-primary/90"></i>Bases de datos</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fas fa-database text-ink-faint"></i><span>MySQL</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-database text-ink-faint"></i><span>SQL</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-database text-ink-faint"></i><span>PostgreSQL</span></div>
             </div>
           </div>
 
           <!-- Herramientas -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-tools mr-2 text-primary/90"></i>Herramientas</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fab fa-git-alt text-slate-200/80"></i><span>Git</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-github text-slate-200/80"></i><span>GitHub</span></div>
-              <div class="flex items-center gap-2"><i class="fab fa-docker text-slate-200/80"></i><span>Docker</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-tools mr-2 text-primary/90"></i>Herramientas</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fab fa-git-alt text-ink-faint"></i><span>Git</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-github text-ink-faint"></i><span>GitHub</span></div>
+              <div class="flex items-center gap-2"><i class="fab fa-docker text-ink-faint"></i><span>Docker</span></div>
             </div>
           </div>
 
           <!-- IA Generativa -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-robot mr-2 text-primary/90"></i>IA Generativa</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fas fa-terminal text-purple-400"></i><span>Claude Code (CLI)</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-terminal text-slate-200/80"></i><span>ChatGPT Codex</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-globe text-blue-400"></i><span>Google Stitch</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-terminal text-slate-200/80"></i><span>Cualquier IA por terminal</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-robot mr-2 text-primary/90"></i>IA Generativa</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-purple-600"></i><span>Claude Code (CLI)</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-ink-faint"></i><span>ChatGPT Codex</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-globe text-blue-600"></i><span>Google Stitch</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-terminal text-ink-faint"></i><span>Cualquier IA por terminal</span></div>
             </div>
           </div>
 
           <!-- Metodologías -->
           <div class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-project-diagram mr-2 text-primary/90"></i>Metodologías</h3>
-            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
-              <div class="flex items-center gap-2"><i class="fas fa-sync text-slate-200/80"></i><span>Scrum</span></div>
-              <div class="flex items-center gap-2"><i class="fas fa-chart-line text-slate-200/80"></i><span>Trabajo bajo objetivos (KPIs de tiempo/minutos)</span></div>
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-project-diagram mr-2 text-primary/90"></i>Metodologías</h3>
+            <div class="mt-4 space-y-3 text-sm text-ink-soft">
+              <div class="flex items-center gap-2"><i class="fas fa-sync text-ink-faint"></i><span>Scrum</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-chart-line text-ink-faint"></i><span>Trabajo bajo objetivos (KPIs de tiempo/minutos)</span></div>
             </div>
           </div>
         </div>
@@ -954,11 +972,11 @@
       <div class="container-app" data-aos="fade-up">
         <h2 class="section-title">🎓 Educación</h2>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           <!-- Ingeniero de Software -->
           <article class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-graduation-cap mr-2 text-primary/90"></i>Ingeniero de Software</h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-graduation-cap mr-2 text-primary/90"></i>Ingeniero de Software</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
               Formación universitaria enfocada en arquitectura de software, metodologías ágiles y desarrollo full stack.
             </p>
             <div class="mt-5">
@@ -970,8 +988,8 @@
 
           <!-- Tecnólogo en Análisis y Desarrollo -->
           <article class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-laptop-code mr-2 text-primary/90"></i>Tecnólogo en Análisis y Desarrollo</h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-laptop-code mr-2 text-primary/90"></i>Tecnólogo en Análisis y Desarrollo</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
               Enfoque práctico en análisis, diseño e implementación de sistemas de información.
             </p>
             <div class="mt-5">
@@ -983,8 +1001,8 @@
 
           <!-- Curso Angular & Spring Boot -->
           <article class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-certificate mr-2 text-primary/90"></i>Curso Angular & Spring Boot</h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+            <h3 class="text-sm font-bold text-ink"><i class="fas fa-certificate mr-2 text-primary/90"></i>Curso Angular & Spring Boot</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
               Capacitación intensiva para desarrollar aplicaciones web modernas con backend y frontend desacoplados.
             </p>
             <div class="mt-5">
@@ -996,10 +1014,10 @@
 
           <!-- Ventas y atención al cliente -->
           <article class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100">
+            <h3 class="text-sm font-bold text-ink">
               <i class="fas fa-handshake mr-2 text-primary/90"></i>Ventas y atención al cliente
             </h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
               Formación orientada a la comunicación con clientes, gestión de objeciones y construcción de relaciones de
               largo plazo, útil para entender mejor el contexto de negocio detrás de cada proyecto.
             </p>
@@ -1012,10 +1030,10 @@
 
           <!-- Habilidades comunicativas para presentaciones en público -->
           <article class="surface surface-hover p-6">
-            <h3 class="text-sm font-bold text-slate-100">
+            <h3 class="text-sm font-bold text-ink">
               <i class="fas fa-microphone-alt mr-2 text-primary/90"></i>Habilidades comunicativas para presentaciones en público
             </h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
               Curso centrado en estructurar mensajes claros, presentar ideas técnicas a personas no técnicas y mejorar
               la confianza al exponer resultados de proyectos.
             </p>
@@ -1036,22 +1054,22 @@
 
         <div class="mx-auto mt-8 max-w-2xl">
           <div class="surface p-6 md:p-8">
-            <ul class="divide-y divide-white/10">
-              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+            <ul class="divide-y divide-ink/10">
+              <li class="flex items-center gap-3 py-4 text-sm text-ink-soft">
                 <i class="fas fa-phone-alt text-primary/90"></i>
                 <span>+57 314 589 9773</span>
               </li>
-              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+              <li class="flex items-center gap-3 py-4 text-sm text-ink-soft">
                 <i class="fas fa-envelope text-primary/90"></i>
                 <a href="mailto:sergiose534@gmail.com" class="subtle-link">sergiose534@gmail.com</a>
               </li>
-              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+              <li class="flex items-center gap-3 py-4 text-sm text-ink-soft">
                 <i class="fab fa-linkedin text-primary/90"></i>
                 <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="subtle-link">
                   linkedin.com/in/sergio-david-sepulveda...
                 </a>
               </li>
-              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+              <li class="flex items-center gap-3 py-4 text-sm text-ink-soft">
                 <i class="fab fa-github text-primary/90"></i>
                 <a href="https://github.com/53R610-D4V1D" target="_blank" class="subtle-link">
                   github.com/53R610-D4V1D
@@ -1071,12 +1089,12 @@
   </main>
 
   <button type="button" id="btnBackTop" aria-label="Volver arriba"
-    class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-slate-950 shadow-glow transition opacity-0 pointer-events-none translate-y-2 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+    class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-glow transition opacity-0 pointer-events-none translate-y-2 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <footer class="border-t border-white/10 py-8">
-    <div class="container-app text-center text-sm text-slate-200/75">
+  <footer class="border-t border-ink/10 py-8">
+    <div class="container-app text-center text-sm text-ink-faint">
       <p class="mb-0">&copy; 2025 <a class="subtle-link" href="#inicio">Sergio David Sepúlveda</a>. Todos los derechos reservados.</p>
     </div>
   </footer>
