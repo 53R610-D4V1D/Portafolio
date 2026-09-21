@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Hoja de vida de Sergio David Sepúlveda Montoya, Ingeniero de Software y desarrollador backend con más de 5 años de experiencia.">
+  <meta name="robots" content="noindex, follow">
+  <title>Hoja de vida — Sergio David Sepúlveda Montoya</title>
+  <link rel="icon" type="image/svg+xml" href="asset/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00796b;
+      --ink: #16202b;
+      --muted: #4a5763;
+      --rule: #d9dee3;
+      --page: 20mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #eef1f4;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 12px;
+      font-family: 'Outfit', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .sheet {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+      padding: var(--page);
+      box-shadow: 0 10px 40px rgba(22, 32, 43, .12);
+    }
+
+    /* ---------- Encabezado ---------- */
+    h1 {
+      margin: 0;
+      font-size: 24pt;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      line-height: 1.1;
+    }
+
+    .headline {
+      margin: 6px 0 0;
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .contact {
+      margin: 10px 0 0;
+      font-size: 9.4pt;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sep::after {
+      content: " · ";
+      color: var(--rule);
+    }
+
+    /* ---------- Secciones ---------- */
+    h2 {
+      margin: 22px 0 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--primary);
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      color: var(--primary);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 700;
+    }
+
+    .role {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4px 16px;
+    }
+
+    .when {
+      font-size: 9.2pt;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .org {
+      margin: 2px 0 0;
+      font-size: 9.6pt;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .entry {
+      margin-bottom: 15px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 7px 0 0;
+    }
+
+    ul {
+      margin: 7px 0 0;
+      padding-left: 17px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    b,
+    strong {
+      font-weight: 600;
+    }
+
+    .meta {
+      margin-top: 6px;
+      font-size: 9.2pt;
+      color: var(--muted);
+    }
+
+    .skills li {
+      margin-bottom: 5px;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 28px;
+    }
+
+    /* ---------- Impresion ---------- */
+    @page {
+      size: Letter;
+      margin: 14mm;
+    }
+
+    @media print {
+      html {
+        background: #fff;
+      }
+
+      body {
+        padding: 0;
+        font-size: 9.8pt;
+      }
+
+      .sheet {
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .contact a {
+        border-bottom: 0;
+      }
+
+      h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .entry,
+      li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    .no-print {
+      max-width: 210mm;
+      margin: 0 auto 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 9.6pt;
+      line-height: 1.6;
+    }
+
+    .no-print b {
+      color: #5eead4;
+    }
+
+    @media (max-width: 640px) {
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 14px 8px;
+      }
+
+      .sheet {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="no-print">
+    <b>Para generar el PDF:</b> Ctrl+P (o Cmd+P) &rarr; Destino &ldquo;Guardar como PDF&rdquo; &rarr; Márgenes
+    predeterminados &rarr; desactivá &ldquo;Encabezados y pies de página&rdquo;. Este aviso no se imprime.
+  </div>
+
+  <main class="sheet">
+
+    <header>
+      <h1>Sergio David Sepúlveda Montoya</h1>
+      <p class="headline">Ingeniero de Software &middot; Backend Developer &middot; IA en producción</p>
+      <p class="contact">
+        <span class="sep">Dabeiba, Antioquia (Colombia)</span>
+        <span class="sep">Disponibilidad para trabajo remoto</span>
+        <span>+57 314 589 9773</span><br>
+        <span class="sep"><a href="mailto:sergiose534@gmail.com">sergiose534@gmail.com</a></span>
+        <span class="sep"><a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8">linkedin.com/in/sergio-david-sepulveda-montoya</a></span>
+        <span class="sep"><a href="https://github.com/53R610-D4V1D">github.com/53R610-D4V1D</a></span>
+        <span><a href="https://53r610-d4v1d.github.io/Portafolio/">53r610-d4v1d.github.io/Portafolio</a></span>
+      </p>
+    </header>
+
+    <section>
+      <h2>Perfil profesional</h2>
+      <p>
+        Ingeniero de Software con más de 5 años construyendo software backend en producción. Fundé <b>Activisport</b> y
+        desarrollé el producto completo como único responsable técnico: una plataforma SaaS multi-tenant para clubes
+        deportivos, hoy en producción y con cliente de pago recurrente, sobre una arquitectura hexagonal en Next.js 16,
+        PostgreSQL y Railway, con un asistente de IA capaz de consultar la información del club y modificar la base de
+        datos mediante herramientas. Antes, en el ecosistema PHP/Laravel, reduje de 20 a 5 minutos la generación de
+        informes críticos refactorizando consultas Eloquent a SQL nativo. Integro agentes de IA en todo el ciclo de
+        desarrollo: la IA ejecuta, yo defino la arquitectura y las decisiones técnicas.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experiencia profesional</h2>
+
+      <div class="entry">
+        <div class="role">
+          <h3>Fundador y Desarrollador Principal &mdash; Activisport</h3>
+          <span class="when">Abril 2026 &ndash; Presente</span>
+        </div>
+        <p class="org">SaaS multi-tenant para clubes deportivos &middot; activisport.club</p>
+        <ul>
+          <li><b>Producto en producción con facturación recurrente:</b> la plataforma opera con un club en suscripción
+            mensual desde julio de 2026, tres meses y medio después del primer commit del producto. Me encargo del 100%
+            del desarrollo de la aplicación como único perfil técnico de un equipo de tres, junto a los frentes de
+            operaciones y comercial.</li>
+          <li><b>Arquitectura multi-tenant desde cero:</b> diseñé y construí en solitario la plataforma, desde la idea
+            hasta producción, con aislamiento de datos por cliente sobre una arquitectura hexagonal en Next.js 16,
+            TypeScript, Prisma y PostgreSQL, con las capas de dominio, aplicación, infraestructura e interfaz
+            separadas.</li>
+          <li><b>Escala y cobertura de pruebas:</b> 7.561 pruebas automatizadas repartidas en 776 archivos, sobre un
+            modelo de datos de 77 entidades y 102 migraciones.</li>
+          <li><b>Asistente de IA con acceso a herramientas:</b> desarrollé un asistente conversacional que consulta toda
+            la información del club y ejecuta herramientas para modificar la base de datos bajo instrucciones de guía,
+            con entrada por texto y por voz, llevando <i>function calling</i> a un entorno productivo real.</li>
+          <li><b>Infraestructura cloud de punta a punta:</b> despliegue y operación en Railway, correo transaccional con
+            Resend y almacenamiento de audio, imagen y video en Cloudflare R2.</li>
+          <li><b>Propiedad total del ciclo técnico:</b> idea, arquitectura, desarrollo, despliegue e infraestructura,
+            traduciendo a producto los requerimientos de perfiles no técnicos, con orquestación de agentes de IA como
+            método de trabajo.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="role">
+          <h3>Desarrollador de Aplicaciones Web &mdash; Serviunix S.A.S</h3>
+          <span class="when">Febrero 2021 &ndash; Diciembre 2024</span>
+        </div>
+        <p class="org">Satori, Ecologística, SuVenta y SuDriver</p>
+        <ul>
+          <li><b>Optimización de rendimiento SQL:</b> reduje de 20 a 5 minutos la generación de informes críticos
+            refactorizando consultas Eloquent a SQL nativo en el proyecto Ecologística.</li>
+          <li><b>Automatización de procesos logísticos:</b> digitalicé sistemas en papel mediante formularios complejos
+            y órdenes de servicio automatizadas, incluida la lógica de asignación de vehículos según capacidad y tipo de
+            residuo.</li>
+          <li><b>APIs REST para aplicaciones móviles:</b> diseñé y construí servicios consumidos por apps en React
+            Native para la validación de listas de chequeo en tiempo real.</li>
+          <li><b>Soporte técnico nivel 2/3:</b> atendí clientes estratégicos resolviendo incidencias críticas,
+            gestionando roles de usuario y ejecutando consultas SQL bajo demanda.</li>
+          <li><b>Metodología Scrum:</b> entregué features de backend (Laravel) y frontend (Blade) bajo métricas de
+            productividad. Carta de recomendación disponible.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Proyectos destacados</h2>
+
+      <div class="entry">
+        <div class="role">
+          <h3>Reporte Municipal &mdash; Plataforma GovTech multi-tenant</h3>
+          <span class="when">Marzo &ndash; abril 2026</span>
+        </div>
+        <p>
+          Sistema de reportes ciudadanos de infraestructura urbana: el ciudadano reporta un hueco, un poste caído o una
+          fuga desde una app móvil, con foto y ubicación GPS, y la alcaldía gestiona el caso desde un panel web con
+          estados, asignación de responsable y evidencia de solución.
+        </p>
+        <ul>
+          <li><b>Tres clientes sobre un backend propio:</b> API REST en Spring Boot 3.2 (Java 21) con 88 endpoints en un
+            monolito modular de 9 dominios, panel administrativo en Next.js 14 y aplicación móvil en React Native con
+            Expo.</li>
+          <li><b>Multi-tenancy estricto con RBAC de cuatro niveles:</b> aislamiento por municipio en toda consulta,
+            respaldado por pruebas que verifican los bordes del tenant, más un panel de superadministración con gestión
+            de clientes, planes y registros de auditoría.</li>
+          <li><b>438 pruebas automatizadas:</b> 276 en backend con JUnit 5, Mockito y H2, y 162 en móvil con Jest y
+            Testing Library, además de 68 casos end-to-end ejecutados sobre el panel.</li>
+          <li><b>Refactor SOLID documentado como ADR:</b> dos clases de 470 y 322 líneas divididas en seis servicios
+            enfocados, con CQRS ligero, patrón Strategy para exportes a Excel y PDF, y abstracción del contexto de
+            seguridad.</li>
+        </ul>
+        <p class="meta">PostgreSQL con 23 migraciones Flyway sobre 21 tablas, JWT con refresh tokens rotativos,
+          almacenamiento en Cloudflare R2 y correo transaccional con Resend.</p>
+      </div>
+
+      <div class="entry">
+        <div class="role">
+          <h3>Invector &mdash; Marketplace de invenciones e inversión</h3>
+          <span class="when">Julio 2025 &ndash; agosto 2026</span>
+        </div>
+        <p>
+          Plataforma donde los inventores publican proyectos con metas de inversión y los inversores expresan interés en
+          financiarlos, con aprobación administrativa previa a la publicación. Cada invención avanza por fases: idea,
+          prototipo, validado y escalado.
+        </p>
+        <ul>
+          <li>Construida en <b>Laravel 12</b> sobre PHP 8.2, con <b>React e Inertia.js</b>, TypeScript y Tailwind CSS.</li>
+          <li>Autenticación completa con verificación de correo, perfil público de creador y asistente de tres pasos
+            para publicar invenciones con imagen y video.</li>
+          <li>Flujo de aprobación de pendiente a aprobado o rechazado, con historial de decisiones y estado
+            denormalizado para consulta.</li>
+          <li>Panel administrativo con permisos granulares por módulo, taxonomía de dos niveles y tablero de métricas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Habilidades técnicas</h2>
+      <ul class="skills">
+        <li><b>Lenguajes:</b> PHP, TypeScript, JavaScript, Java, SQL</li>
+        <li><b>Backend y frameworks:</b> Laravel, Spring Boot, Next.js, FilamentPHP, APIs REST, autenticación con JWT</li>
+        <li><b>Frontend y móvil:</b> React, Angular, React Native, Blade, Tailwind CSS</li>
+        <li><b>Bases de datos:</b> PostgreSQL, MySQL, Prisma ORM, Flyway, optimización de consultas SQL</li>
+        <li><b>IA aplicada:</b> orquestación de agentes, <i>function calling</i> sobre base de datos, ingeniería de
+          prompts, Claude Code, ChatGPT Codex, desarrollo asistido por IA</li>
+        <li><b>Cloud e infraestructura:</b> Railway, Cloudflare R2, Resend, Docker, arquitectura multi-tenant</li>
+        <li><b>Prácticas:</b> arquitectura hexagonal, SOLID, pruebas con JUnit 5 y Jest, Git y GitHub, Scrum</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Educación</h2>
+      <div class="entry">
+        <div class="role">
+          <h3>Ingeniero de Software</h3>
+          <span class="when">2021 &ndash; 2024</span>
+        </div>
+        <p class="org">Politécnico Grancolombiano</p>
+      </div>
+      <div class="entry">
+        <div class="role">
+          <h3>Tecnólogo en Análisis y Desarrollo de Sistemas de Información</h3>
+          <span class="when">2019 &ndash; 2021</span>
+        </div>
+        <p class="org">SENA</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación complementaria</h2>
+      <ul>
+        <li><b>Bootcamp: Crea Aplicaciones Web y Móviles Fácil con IA</b> (33 h) &mdash; Udemy, 2026</li>
+        <li><b>Habilidades comunicativas para presentaciones en público</b> &mdash; Universidad Pontificia Bolivariana,
+          2025</li>
+        <li><b>Ventas y atención al cliente</b> &mdash; Universidad Católica de Oriente, 2025</li>
+        <li><b>Curso Angular y Spring Boot</b> &mdash; Udemy, 2025</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <div class="two">
+        <div><b>Español:</b> nativo</div>
+        <div><b>Inglés:</b> básico</div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
