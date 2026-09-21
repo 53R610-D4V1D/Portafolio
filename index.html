@@ -4,8 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Sergio David Sepúlveda Montoya — Desarrollador full stack con experiencia en Laravel, Angular, Spring Boot, React y bases de datos.">
-  <title>Portafolio — Sergio David Sepúlveda | Desarrollador Full Stack</title>
+  <meta name="description"
+    content="Ingeniero de Software backend con más de 5 años en Laravel, Spring Boot y Next.js. Fundé Activisport, SaaS multi-tenant en producción, y orquesto agentes de IA.">
+  <meta name="author" content="Sergio David Sepúlveda Montoya">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#00adb5">
+  <title>Sergio David Sepúlveda | Backend Developer · IA en producción</title>
+
+  <!-- IMPORTANTE: si publicás el sitio en otro dominio, cambiá esta URL en canonical, og:url, og:image y en el JSON-LD de abajo. -->
+  <link rel="canonical" href="https://53r610-d4v1d.github.io/Portafolio/">
+
+  <link rel="icon" type="image/svg+xml" href="asset/favicon.svg">
+  <link rel="apple-touch-icon" href="asset/perfil_1.png">
+
+  <!-- Open Graph: cómo se ve el link al compartirlo en LinkedIn, WhatsApp o Slack -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Sergio David Sepúlveda — Portafolio">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:url" content="https://53r610-d4v1d.github.io/Portafolio/">
+  <meta property="og:title" content="Sergio David Sepúlveda | Backend Developer · IA en producción">
+  <meta property="og:description"
+    content="Más de 5 años construyendo software backend en Laravel, Spring Boot y Next.js. Fundé Activisport, una SaaS multi-tenant en producción que desarrollo como único responsable técnico. Orquesto agentes de IA de punta a punta: la IA ejecuta, yo decido la arquitectura.">
+  <meta property="og:image" content="https://53r610-d4v1d.github.io/Portafolio/asset/perfil_1.png">
+  <meta property="og:image:width" content="1328">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Sergio David Sepúlveda Montoya, Ingeniero de Software">
+  <meta property="profile:first_name" content="Sergio David">
+  <meta property="profile:last_name" content="Sepúlveda Montoya">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sergio David Sepúlveda | Backend Developer · IA en producción">
+  <meta name="twitter:description"
+    content="Más de 5 años construyendo software backend en Laravel, Spring Boot y Next.js. Fundé Activisport, una SaaS multi-tenant en producción que desarrollo como único responsable técnico. Orquesto agentes de IA de punta a punta: la IA ejecuta, yo decido la arquitectura.">
+  <meta name="twitter:image" content="https://53r610-d4v1d.github.io/Portafolio/asset/perfil_1.png">
+  <meta name="twitter:image:alt" content="Sergio David Sepúlveda Montoya, Ingeniero de Software">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +64,7 @@
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -184,6 +218,12 @@
       align-items: center;
     }
 
+    /* El área de imagen de cada proyecto fija su propia proporción: no depende
+       de que la utilidad aspect-video de Tailwind llegue a generarse. */
+    .carousel-media {
+      aspect-ratio: 16 / 9;
+    }
+
     .typing {
       font-size: 1.05rem;
       color: #00adb5;
@@ -193,9 +233,15 @@
       white-space: nowrap;
       overflow: hidden;
       display: inline-block;
-      animation: typing 2.1s steps(18) 0.35s forwards, blink 0.6s step-end infinite;
+      animation: typing 2.1s steps(36) 0.35s forwards, blink 0.6s step-end infinite;
       width: 0;
       max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      .typing {
+        font-size: 0.82rem;
+      }
     }
 
     @keyframes typing {
@@ -255,9 +301,13 @@
       max-height: 80vh;
     }
 
+    /* Se mide contra el viewport, no contra el contenedor: un max-height en
+       porcentaje no resuelve si el padre tiene altura automática, y las
+       capturas verticales terminaban recortadas por el overflow. */
     .modal-image-container img {
-      max-width: 100%;
-      max-height: 100%;
+      display: block;
+      max-width: calc(90vw - 8px);
+      max-height: calc(80vh - 8px);
       width: auto;
       height: auto;
       object-fit: contain;
@@ -266,8 +316,13 @@
     @media (max-width: 640px) {
       .modal-image-container {
         max-width: 95vw;
-        max-height: 60vh;
+        max-height: 70vh;
         border-width: 1px;
+      }
+
+      .modal-image-container img {
+        max-width: calc(95vw - 6px);
+        max-height: calc(70vh - 6px);
       }
 
       .modal-gallery .nav-btn {
@@ -362,6 +417,205 @@
     }
   </style>
 
+  <!-- Datos estructurados (schema.org). Esto es lo que leen Google, los ATS y los screeners con IA:
+       no ven el diseño, ven este JSON. Si cambiás un dato visible de la página, cambialo también acá. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://53r610-d4v1d.github.io/Portafolio/#profilepage",
+        "url": "https://53r610-d4v1d.github.io/Portafolio/",
+        "name": "Portafolio — Sergio David Sepúlveda Montoya | Backend Developer · IA en producción",
+        "inLanguage": "es",
+        "mainEntity": {
+          "@id": "https://53r610-d4v1d.github.io/Portafolio/#sergio"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://53r610-d4v1d.github.io/Portafolio/#sergio",
+        "name": "Sergio David Sepúlveda Montoya",
+        "givenName": "Sergio David",
+        "familyName": "Sepúlveda Montoya",
+        "jobTitle": "Ingeniero de Software y Desarrollador Backend",
+        "description": "Ingeniero de Software con más de 5 años de experiencia construyendo aplicaciones web backend en PHP/Laravel, Java/Spring Boot y Next.js. Fundador de Activisport, una plataforma SaaS multi-tenant para clubes deportivos en producción, con un club en suscripción mensual desde julio de 2026, donde se encarga del 100% del desarrollo como único perfil técnico. Redujo de 20 a 5 minutos la generación de informes críticos refactorizando consultas Eloquent a SQL nativo. Orquesta agentes de IA a lo largo de todo el ciclo de desarrollo, definiendo la arquitectura y las decisiones técnicas.",
+        "url": "https://53r610-d4v1d.github.io/Portafolio/",
+        "image": "https://53r610-d4v1d.github.io/Portafolio/asset/perfil_1.png",
+        "email": "mailto:sergiose534@gmail.com",
+        "telephone": "+573145899773",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dabeiba",
+          "addressRegion": "Antioquia",
+          "addressCountry": "CO"
+        },
+        "knowsLanguage": [
+          "Español (nativo)",
+          "Inglés (básico)"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8",
+          "https://github.com/53R610-D4V1D"
+        ],
+        "knowsAbout": [
+          "Desarrollo backend",
+          "Java",
+          "Spring Boot",
+          "PHP",
+          "Laravel",
+          "FilamentPHP",
+          "JavaScript",
+          "TypeScript",
+          "Angular",
+          "React",
+          "Next.js",
+          "Prisma ORM",
+          "MySQL",
+          "PostgreSQL",
+          "Optimización de consultas SQL",
+          "Diseño de APIs REST",
+          "Autenticación con JWT",
+          "Docker",
+          "Git y GitHub",
+          "Railway",
+          "Cloudflare R2",
+          "Resend",
+          "Orquestación de agentes de IA",
+          "Desarrollo asistido por IA",
+          "Claude Code",
+          "ChatGPT Codex",
+          "Ingeniería de prompts",
+          "Metodología Scrum",
+          "Soporte técnico nivel 2 y 3",
+          "Arquitectura multi-tenant",
+          "React Native",
+          "Expo",
+          "Flyway",
+          "JUnit 5",
+          "Spring Security",
+          "Arquitectura hexagonal"
+        ],
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Desarrollador Backend",
+            "occupationalCategory": "15-1252.00",
+            "skills": "PHP, Laravel, Java, Spring Boot, TypeScript, Next.js, Angular, React, PostgreSQL, MySQL, optimización SQL, APIs REST, Docker, orquestación de agentes de IA, Scrum"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Fundador y Desarrollador Principal en Activisport",
+            "occupationalCategory": "15-1252.00",
+            "skills": "Arquitectura SaaS multi-tenant, Next.js, TypeScript, Prisma, PostgreSQL, Railway, Cloudflare R2, Resend, asistentes de IA con function calling, orquestación de agentes de IA"
+          }
+        ],
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Politécnico Grancolombiano"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "SENA (Servicio Nacional de Aprendizaje)"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Bootcamp 2027: Crea Aplicaciones Web y Móviles Fácil con IA",
+            "description": "Bootcamp de 33 horas sobre desarrollo de aplicaciones web y móviles asistido por inteligencia artificial.",
+            "credentialCategory": "certificate",
+            "url": "https://ude.my/UC-27739c3e-339c-433a-8e9e-00fd1cb595dc",
+            "dateCreated": "2026-09-16",
+            "timeRequired": "PT33H",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Udemy"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Ingeniero de Software",
+            "credentialCategory": "degree",
+            "educationalLevel": "Pregrado universitario",
+            "recognizedBy": {
+              "@type": "EducationalOrganization",
+              "name": "Politécnico Grancolombiano"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
+            "credentialCategory": "degree",
+            "educationalLevel": "Tecnólogo",
+            "recognizedBy": {
+              "@type": "EducationalOrganization",
+              "name": "SENA (Servicio Nacional de Aprendizaje)"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Curso Angular y Spring Boot",
+            "credentialCategory": "certificate",
+            "dateCreated": "2025",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Udemy"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Ventas y atención al cliente",
+            "credentialCategory": "certificate",
+            "dateCreated": "2025",
+            "recognizedBy": {
+              "@type": "EducationalOrganization",
+              "name": "Universidad Católica de Oriente"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Habilidades comunicativas para presentaciones en público",
+            "credentialCategory": "certificate",
+            "dateCreated": "2025",
+            "recognizedBy": {
+              "@type": "EducationalOrganization",
+              "name": "Universidad Pontificia Bolivariana"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://53r610-d4v1d.github.io/Portafolio/#activisport",
+        "name": "Activisport",
+        "url": "https://activisport.club/",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "es",
+        "author": {
+          "@id": "https://53r610-d4v1d.github.io/Portafolio/#sergio"
+        },
+        "description": "Plataforma SaaS multi-tenant para clubes deportivos, con aislamiento de datos por cliente, construida con Next.js 16, TypeScript, Prisma y PostgreSQL. Incluye un asistente de IA conversacional que consulta toda la información del club y ejecuta herramientas para modificar la base de datos (function calling en producción). Desplegada en Railway, con correo transaccional en Resend y almacenamiento de audio, imagen y video en Cloudflare R2. Desarrollada con orquestación de agentes de IA."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://53r610-d4v1d.github.io/Portafolio/#reportemunicipal",
+        "name": "Reporte Municipal",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": "es",
+        "author": {
+          "@id": "https://53r610-d4v1d.github.io/Portafolio/#sergio"
+        },
+        "description": "Plataforma multi-tenant de reportes ciudadanos de infraestructura urbana. Backend REST en Spring Boot 3.2 sobre Java 21 como monolito modular de nueve dominios, panel administrativo en Next.js 14 y aplicación móvil en React Native con Expo, sobre PostgreSQL con migraciones Flyway."
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body class="page-glow">
@@ -424,11 +678,14 @@
             </h1>
 
             <div class="typing-wrap mt-3">
-              <p class="typing mb-0">Backend Developer</p>
+              <p class="typing mb-0">Backend Developer &middot; IA en producción</p>
             </div>
 
             <div class="mt-7 flex flex-wrap gap-3">
-              <a href="#contacto" class="btn-primary">
+              <a href="cv.html" class="btn-primary">
+                <i class="fas fa-file-lines"></i> Ver hoja de vida
+              </a>
+              <a href="#contacto" class="btn-ghost">
                 <i class="fas fa-envelope"></i> Email
               </a>
               <a href="https://www.linkedin.com/in/sergio-david-sepulveda-montoya-7945351a8" target="_blank" class="btn-ghost">
@@ -479,21 +736,21 @@
               desarrollando en <strong class="text-primary">PHP/Laravel</strong> y brindando soporte técnico directo para resolver incidencias de nivel 2 y 3.
             </p>
             <p>
-              Actualmente, estoy evolucionando mi stack hacia <strong class="text-primary">Java y Spring Boot</strong>, integrando 
-              <strong>Inteligencia Artificial</strong> en mi flujo diario para entregar software más seguro, documentado y en tiempos récord. 
+              Fundé <strong class="text-primary">Activisport</strong> y desarrollé el producto completo como <strong class="text-primary">único responsable técnico</strong>:
+              una plataforma <strong>SaaS multi-tenant</strong> hoy en producción y con cliente de pago recurrente.
+              Orquesto <strong class="text-primary">agentes de IA</strong> en todo el ciclo de desarrollo: la IA ejecuta y yo defino la arquitectura y las decisiones técnicas.
               Creo firmemente que <em class="text-primary/90">la tecnología debe ser invisible para el usuario pero potente en sus resultados</em>.
             </p>
           </div>
         </div>
 
-        <!-- Grid con características y video -->
-        <div class="grid gap-6 md:grid-cols-2">
-          <!-- Características clave -->
+        <!-- Características clave -->
+        <div>
           <div class="surface p-6">
             <h4 class="text-sm font-bold text-slate-100 mb-4">
               <i class="fas fa-rocket mr-2 text-primary/90"></i>Lo que me define
             </h4>
-            <ul class="space-y-3 text-sm text-slate-200/85">
+            <ul class="grid gap-3 text-sm text-slate-200/85 md:grid-cols-2 md:gap-x-8">
               <li class="flex items-start gap-3">
                 <i class="fas fa-check-circle text-primary/90 mt-1"></i>
                 <span><strong>Orientado a resultados:</strong> Optimización de procesos y reducción de tiempos de respuesta</span>
@@ -504,32 +761,15 @@
               </li>
               <li class="flex items-start gap-3">
                 <i class="fas fa-check-circle text-primary/90 mt-1"></i>
-                <span><strong>Stack en evolución:</strong> De Laravel a Spring Boot, siempre aprendiendo</span>
+                <span><strong>Inteligencia Artificial 100%:</strong> Orquesto agentes de IA de punta a punta; la IA ejecuta, yo decido la arquitectura y qué código entra a producción</span>
               </li>
               <li class="flex items-start gap-3">
                 <i class="fas fa-check-circle text-primary/90 mt-1"></i>
-                <span><strong>IA como aliada:</strong> Integración de herramientas de IA para mayor eficiencia</span>
+                <span><strong>Dueño de producto:</strong> De la idea al despliegue: fundé Activisport y la opero en producción</span>
               </li>
             </ul>
           </div>
 
-          <!-- Video presentación -->
-          <div class="surface surface-hover overflow-hidden">
-            <div class="relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-4 bg-gradient-to-tr from-slate-950 via-slate-900 to-primary/20 px-6 text-center">
-              <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-black/40 text-primary shadow-lg shadow-primary/25">
-                <i class="fas fa-play text-xl"></i>
-              </div>
-              <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">Video presentación</p>
-                <p class="mt-2 text-xs text-slate-200/85 max-w-md mx-auto">
-                  Conóceme en acción: cómo abordo proyectos, mi filosofía de desarrollo y los desafíos técnicos que más disfruto resolver.
-                </p>
-              </div>
-              <a href="https://www.youtube.com/watch?v=QP7TrNcYnns" target="_blank" rel="noopener noreferrer" class="btn-ghost px-4 py-2 text-xs">
-                <i class="fas fa-play-circle"></i> Ver presentación
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -540,6 +780,54 @@
         <h2 class="section-title">💼 Experiencia Profesional</h2>
 
         <div class="mt-8 grid gap-6">
+          <!-- Activisport S.A.S -->
+          <article class="surface surface-hover p-6 md:p-8">
+            <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <h3 class="text-lg font-bold tracking-tight md:text-xl">Fundador y Desarrollador Principal - Activisport</h3>
+              <p class="text-sm text-slate-200/75">
+                <i class="fas fa-calendar-alt mr-2 text-primary/90"></i>
+                <strong>Abril 2026 - Presente</strong>
+              </p>
+            </div>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <h4 class="font-semibold text-primary/95">Producto y Arquitectura</h4>
+                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                  <li><strong>Producto en producción con facturación recurrente:</strong> La plataforma opera con un club en suscripción mensual desde julio de 2026. Me encargo del 100% del desarrollo de la aplicación como único perfil técnico de un equipo de tres, junto a los frentes de operaciones y comercial.</li>
+                  <li><strong>Arquitectura multi-tenant desde cero:</strong> Diseñé y construí en solitario una plataforma SaaS multi-tenant para clubes deportivos, desde la idea hasta producción, con aislamiento de datos por cliente sobre una arquitectura hexagonal.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-primary/95">⚙️ Responsabilidades</h4>
+                <ul class="mt-3 space-y-2 text-sm text-slate-200/85">
+                  <li><strong>Asistente de IA con acceso a herramientas:</strong> Desarrollé un asistente conversacional que consulta toda la información del club y ejecuta herramientas para modificar la base de datos bajo instrucciones de guía, llevando function calling a un entorno productivo real.</li>
+                  <li><strong>Infraestructura cloud de punta a punta:</strong> Despliegue y operación en Railway, correo transaccional con Resend y almacenamiento de audio, imagen y video en Cloudflare R2.</li>
+                  <li><strong>Propiedad total del ciclo técnico:</strong> Idea, arquitectura, desarrollo, despliegue e infraestructura, traduciendo a producto los requerimientos de perfiles no técnicos, con orquestación de agentes de IA como método de trabajo.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <strong class="block text-sm text-slate-200/85">Tecnologías:</strong>
+              <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-200/85">
+                <li><i class="fab fa-react text-sky-300"></i> Next.js</li>
+                <li><i class="fas fa-file-code text-primary/90"></i> TypeScript</li>
+                <li><i class="fas fa-layer-group text-indigo-300"></i> Prisma</li>
+                <li><i class="fas fa-database text-slate-200/80"></i> PostgreSQL</li>
+                <li><i class="fas fa-server text-slate-200/80"></i> Railway</li>
+                <li><i class="fab fa-cloudflare text-orange-400"></i> Cloudflare R2</li>
+                <li><i class="fas fa-envelope text-slate-200/80"></i> Resend</li>
+                <li><i class="fas fa-robot text-primary/90"></i> IA / Agentes</li>
+              </ul>
+            </div>
+            <div class="mt-6">
+              <a href="https://activisport.club/" target="_blank" rel="noopener noreferrer" class="btn-ghost px-3 py-2 text-xs">
+                <i class="fas fa-arrow-up-right-from-square"></i> Ver Activisport
+              </a>
+            </div>
+          </article>
+
           <!-- Serviunix S.A.S -->
           <article class="surface surface-hover p-6 md:p-8">
             <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
@@ -612,12 +900,6 @@
             <i class="fab fa-laravel mr-2"></i>Laravel
           </label>
 
-          <input type="radio" class="peer/angular sr-only" name="project-filter" id="filter-angular" autocomplete="off">
-          <label for="filter-angular"
-            class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/angular:border-primary/60 peer-checked/angular:text-primary">
-            <i class="fab fa-angular mr-2"></i>Angular
-          </label>
-
           <input type="radio" class="peer/spring sr-only" name="project-filter" id="filter-spring" autocomplete="off">
           <label for="filter-spring"
             class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/spring:border-primary/60 peer-checked/spring:text-primary">
@@ -627,7 +909,7 @@
           <input type="radio" class="peer/nextjs sr-only" name="project-filter" id="filter-nextjs" autocomplete="off">
           <label for="filter-nextjs"
             class="cursor-pointer rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-sm font-medium text-slate-200/90 transition hover:border-primary/40 hover:bg-white/[0.04] peer-checked/nextjs:border-primary/60 peer-checked/nextjs:text-primary">
-            <i class="fab fa-nextjs mr-2"></i>Next.js
+            <i class="fab fa-react mr-2"></i>Next.js
           </label>
         </div>
 
@@ -635,26 +917,41 @@
           <!-- Proyecto Laravel con React -->
           <div class="project-card" data-category="laravel react">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
-                <div class="video-loading">
-                  <i class="fas fa-spinner fa-spin"></i>
+              <div class="carousel-media relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
+                <div id="carousel-invector" class="carousel-container absolute inset-0 flex transition-transform duration-300">
+                  <img src="asset/invector/landing.jpg" alt="Invector - Página principal" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/invector/dashboard.jpg" alt="Invector - Dashboard administrativo" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/invector/gestion-inventos.jpg" alt="Invector - Gestión y aprobación de inventos" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
                 </div>
-                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/wdlS3RbDNjA"
-                  title="Proyecto Laravel con React - Gestión de inventos y financiación" allowfullscreen loading="lazy"
-                  onload="onVideoLoad(this)"></iframe>
+                <button type="button" class="carousel-btn left-2 absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-invector', -1)">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="carousel-btn right-2 absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-invector', 1)">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/60 cursor-pointer" onclick="goToSlide('carousel-invector', 0)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-invector', 1)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-invector', 2)"></span>
+                </div>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Proyecto Laravel con React</h3>
+                <h3 class="text-base font-bold tracking-tight">Invector</h3>
                 <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
-                  Proyecto para la gestión de inventos y búsqueda de financiación, implementando una estructura
-                  robusta de nivel empresarial con panel administrativo avanzado.
+                  Marketplace de invenciones: los inventores publican proyectos con metas de inversión y los inversores
+                  expresan interés en financiarlos, con aprobación administrativa previa a la publicación y fases de
+                  idea a escalado.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
+                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel 12</span>
                   <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">React</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
+                  <span class="rounded-full bg-violet-400/15 px-3 py-1 font-semibold text-violet-300">Inertia.js</span>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">TypeScript</span>
                   <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Panel Admin</span>
                 </div>
+                <p class="mt-3 text-xs text-slate-200/70">
+                  Julio 2025 &ndash; agosto 2026 &middot; Permisos granulares &middot; Workflow de aprobación con historial
+                </p>
                 <div class="mt-5">
                   <div class="flex flex-wrap gap-2">
                     <a href="https://www.youtube.com/watch?v=wdlS3RbDNjA" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
@@ -667,10 +964,12 @@
                   <div class="project-details mt-4 hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
                     <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
-                      <li>Gestión de inventos y solicitudes de financiación</li>
-                      <li>Panel administrativo con control de roles y permisos</li>
-                      <li>Diseño de tablas dinámicas y presentación intuitiva</li>
-                      <li>Integración Laravel + React</li>
+                      <li>Publicación de invenciones con asistente de tres pasos, imagen y video</li>
+                      <li>Fases de proyecto: idea, prototipo, validado y escalado</li>
+                      <li>Intereses de inversión y guardados por parte de los inversores</li>
+                      <li>Flujo de aprobación pendiente / aprobado / rechazado con historial de decisiones</li>
+                      <li>Panel administrativo con permisos granulares por módulo y taxonomía de dos niveles</li>
+                      <li>Laravel 12 sobre PHP 8.2 con React e Inertia.js, TypeScript y Tailwind CSS</li>
                     </ul>
                   </div>
                 </div>
@@ -678,139 +977,68 @@
             </article>
           </div>
 
-          <!-- Proyecto FilamentPHP -->
-          <div class="project-card" data-category="laravel filament">
+          <!-- Reporte Municipal -->
+          <div class="project-card" data-category="spring">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
-                <div class="video-loading">
-                  <i class="fas fa-spinner fa-spin"></i>
+              <div class="carousel-media relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
+                <div id="carousel-reportemunicipal" class="carousel-container absolute inset-0 flex transition-transform duration-300">
+                  <img src="asset/reportemunicipal/principal.jpg" alt="Reporte Municipal - Página principal" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/reportemunicipal/dashboard.jpg" alt="Reporte Municipal - Dashboard de la alcaldía" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/reportemunicipal/reporte.jpg" alt="Reporte Municipal - Detalle de un reporte" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/reportemunicipal/panel_admin_del_sistema.jpg" alt="Reporte Municipal - Panel de superadministración" class="h-full w-full object-cover flex-shrink-0" loading="lazy">
+                  <img src="asset/reportemunicipal/mobile_principal.jpg" alt="Reporte Municipal - App móvil, inicio" class="h-full w-full object-contain flex-shrink-0 bg-slate-950" loading="lazy">
+                  <img src="asset/reportemunicipal/mobile_hacer_reporte.jpg" alt="Reporte Municipal - App móvil, crear reporte" class="h-full w-full object-contain flex-shrink-0 bg-slate-950" loading="lazy">
+                  <img src="asset/reportemunicipal/mobile_lista_reportes.jpg" alt="Reporte Municipal - App móvil, mis reportes" class="h-full w-full object-contain flex-shrink-0 bg-slate-950" loading="lazy">
                 </div>
-                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/OR6bJr5oOG8"
-                  title="Proyecto de FilamentPHP de manera práctica y conociendo la herramienta (Sergio David)" allowfullscreen
-                  loading="lazy" onload="onVideoLoad(this)"></iframe>
+                <button type="button" class="carousel-btn left-2 absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-reportemunicipal', -1)">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="carousel-btn right-2 absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-reportemunicipal', 1)">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/60 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 0)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 1)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 2)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 3)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 4)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 5)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-reportemunicipal', 6)"></span>
+                </div>
               </div>
               <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Proyecto de FilamentPHP</h3>
+                <h3 class="text-base font-bold tracking-tight">Reporte Municipal</h3>
                 <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
-                  Mini panel administrativo desarrollado para practicar y conocer FilamentPHP, explorando sus
-                  principales funcionalidades para la gestión de datos en Laravel.
+                  Plataforma GovTech multi-tenant de reportes ciudadanos: el ciudadano reporta un hueco, un poste caído
+                  o una fuga desde la app móvil con foto y ubicación GPS, y la alcaldía gestiona el caso desde un panel
+                  web con estados, asignación y evidencia de solución.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Laravel</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">FilamentPHP</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">PHP</span>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">Spring Boot 3.2</span>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">Java 21</span>
+                  <span class="rounded-full bg-slate-400/15 px-3 py-1 font-semibold text-slate-300">Next.js 14</span>
+                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">React Native</span>
+                  <span class="rounded-full bg-indigo-400/15 px-3 py-1 font-semibold text-indigo-300">PostgreSQL</span>
+                  <span class="rounded-full bg-purple-400/15 px-3 py-1 font-semibold text-purple-300">Multi-tenant</span>
                 </div>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <a href="https://github.com/53R610-D4V1D/panel-administrativo" class="btn-ghost px-3 py-2 text-xs" target="_blank">
-                    <i class="fab fa-github"></i> Código
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=OR6bJr5oOG8" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-play"></i> Ver video
-                  </a>
-                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
-                    <i class="fas fa-info-circle"></i> Detalles
-                  </button>
-                  <div class="project-details mt-4 w-full hidden" style="display: none;">
-                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
-                      <li>Gestión CRUD de recursos</li>
-                      <li>Interfaz moderna y personalizable</li>
-                      <li>Filtros y búsquedas avanzadas</li>
-                      <li>Integración rápida con Laravel</li>
-                    </ul>
+                <p class="mt-3 text-xs text-slate-200/70">
+                  88 endpoints REST &middot; 438 pruebas automatizadas &middot; 23 migraciones Flyway
+                </p>
+                <div class="mt-5">
+                  <div class="flex flex-wrap gap-2">
+                    <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
+                      <i class="fas fa-info-circle"></i> Detalles
+                    </button>
                   </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Carrito Angular -->
-          <div class="project-card" data-category="angular redux">
-            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
-                <div class="video-loading">
-                  <i class="fas fa-spinner fa-spin"></i>
-                </div>
-                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/ccEx0ti5pVA"
-                  title="Carrito Angular - Implementación completa con Redux" allowfullscreen loading="lazy"
-                  onload="onVideoLoad(this)"></iframe>
-              </div>
-              <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Carro de compras con Angular</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
-                  Implementación de un carrito de compras completo utilizando Angular y Redux
-                  (@ngrx/store) para la gestión del estado global de manera eficiente.
-                </p>
-                <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">Redux</span>
-                  <span class="rounded-full bg-amber-400/15 px-3 py-1 font-semibold text-amber-300">TypeScript</span>
-                </div>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <a href="https://github.com/53R610-D4V1D/3-cart-app" class="btn-ghost px-3 py-2 text-xs" target="_blank">
-                    <i class="fab fa-github"></i> Código
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=ccEx0ti5pVA" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-play"></i> Ver video
-                  </a>
-                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
-                    <i class="fas fa-info-circle"></i> Detalles
-                  </button>
-                  <div class="project-details mt-4 w-full hidden" style="display: none;">
+                  <div class="project-details mt-4 hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
                     <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
-                      <li>Gestión de estado con Redux</li>
-                      <li>Carrito de compras persistente</li>
-                      <li>RxJS para operaciones asíncronas</li>
-                      <li>Interfaz responsiva</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Control de usuarios -->
-          <div class="project-card" data-category="angular spring mysql">
-            <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40">
-                <div class="video-loading">
-                  <i class="fas fa-spinner fa-spin"></i>
-                </div>
-                <iframe class="absolute inset-0 h-full w-full border-0" data-src="https://www.youtube.com/embed/5JYtO72YSCY"
-                  title="Control de usuarios - Sistema completo con Angular y Spring Boot" allowfullscreen loading="lazy"
-                  onload="onVideoLoad(this)"></iframe>
-              </div>
-              <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-base font-bold tracking-tight">Control de usuarios</h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
-                  Sistema completo de gestión de usuarios con autenticación y autorización,
-                  desarrollado con arquitectura de microservicios moderna.
-                </p>
-                <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">Angular</span>
-                  <span class="rounded-full bg-rose-400/15 px-3 py-1 font-semibold text-rose-300">Spring Boot</span>
-                  <span class="rounded-full bg-sky-400/15 px-3 py-1 font-semibold text-sky-300">MySQL</span>
-                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 font-semibold text-emerald-300">JWT</span>
-                </div>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <a href="https://github.com/53R610-D4V1D/users-backend" class="btn-ghost px-3 py-2 text-xs" target="_blank">
-                    <i class="fab fa-github"></i> Código
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=5JYtO72YSCY" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-play"></i> Ver video
-                  </a>
-                  <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
-                    <i class="fas fa-info-circle"></i> Detalles
-                  </button>
-                  <div class="project-details mt-4 w-full hidden" style="display: none;">
-                    <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
-                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
-                      <li>Autenticación con JWT</li>
-                      <li>CRUD completo de usuarios</li>
-                      <li>Roles y permisos avanzados</li>
-                      <li>API RESTful</li>
-                      <li>Base de datos relacional MySQL</li>
+                      <li>Monolito modular en Spring Boot con 9 dominios y 88 endpoints REST</li>
+                      <li>Multi-tenancy por municipio con RBAC de cuatro niveles y panel de superadministración</li>
+                      <li>App móvil en React Native con Expo, cámara, GPS y modo sin conexión</li>
+                      <li>438 pruebas automatizadas entre backend (JUnit 5, Mockito) y móvil (Jest)</li>
+                      <li>Refactor SOLID documentado como ADR, con CQRS ligero y patrón Strategy para exportes</li>
+                      <li>JWT con refresh tokens rotativos, Flyway sobre 21 tablas y almacenamiento en Cloudflare R2</li>
                     </ul>
                   </div>
                 </div>
@@ -821,14 +1049,15 @@
           <!-- Activisport -->
           <div class="project-card" data-category="nextjs">
             <article class="surface surface-hover flex h-full flex-col overflow-hidden">
-              <div class="relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
-                <div id="carousel-activisport" class="carousel-container flex h-full transition-transform duration-300">
-                  <img src="asset/activisport/activisport-landing.png" alt="Activisport - Landing page" class="h-full w-full object-cover flex-shrink-0">
-                  <img src="asset/activisport/dashboard.png" alt="Activisport - Dashboard" class="h-full w-full object-cover flex-shrink-0">
-                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161339.png" alt="Activisport - Gestión de alumnos" class="h-full w-full object-cover flex-shrink-0">
-                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161239.png" alt="Activisport - Asistencia" class="h-full w-full object-cover flex-shrink-0">
-                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161203.png" alt="Activisport - Soporte" class="h-full w-full object-cover flex-shrink-0">
-                  <img src="asset/activisport/Captura de pantalla 2026-04-22 161523.png" alt="Activisport - Inicio de sesión" class="h-full w-full object-cover flex-shrink-0">
+              <div class="carousel-media relative aspect-video w-full bg-slate-900/40 overflow-hidden cursor-pointer" onclick="openModalGallery(this)">
+                <div id="carousel-activisport" class="carousel-container absolute inset-0 flex transition-transform duration-300">
+                  <img src="asset/activisport/agente-ia.jpg" alt="Activisport - Asistente de IA consultando la deuda vencida de la academia" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/landing.jpg" alt="Activisport - Landing page" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/dashboard.jpg" alt="Activisport - Dashboard" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/alumnos.jpg" alt="Activisport - Gestión de alumnos" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/asistencia.jpg" alt="Activisport - Asistencia" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/soporte.jpg" alt="Activisport - Soporte" class="h-full w-full object-cover flex-shrink-0">
+                  <img src="asset/activisport/login.jpg" alt="Activisport - Inicio de sesión" class="h-full w-full object-cover flex-shrink-0">
                 </div>
                 <button type="button" class="carousel-btn left-2 absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80" onclick="moveCarousel('carousel-activisport', -1)">
                   <i class="fas fa-chevron-left"></i>
@@ -843,12 +1072,15 @@
                   <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 3)"></span>
                   <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 4)"></span>
                   <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 5)"></span>
+                  <span class="carousel-dot h-2 w-2 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('carousel-activisport', 6)"></span>
                 </div>
               </div>
               <div class="flex flex-1 flex-col p-6">
                 <h3 class="text-base font-bold tracking-tight">Activisport</h3>
                 <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-200/85">
-                  Plataforma web multi-tenant para gestión de academias deportivas con panel admin completo.
+                  SaaS multi-tenant para clubes deportivos: gestión de alumnos, clases, asistencia y pagos, con
+                  aislamiento de datos por club. Incluye un asistente de IA que consulta la información del club y
+                  ejecuta herramientas para modificar la base de datos.
                 </p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
                   <span class="rounded-full bg-slate-400/15 px-3 py-1 font-semibold text-slate-300">Next.js 16</span>
@@ -857,6 +1089,9 @@
                   <span class="rounded-full bg-indigo-400/15 px-3 py-1 font-semibold text-indigo-300">PostgreSQL</span>
                   <span class="rounded-full bg-purple-400/15 px-3 py-1 font-semibold text-purple-300">Claude Code</span>
                 </div>
+                <p class="mt-3 text-xs text-slate-200/70">
+                  Abril 2026 &ndash; presente &middot; En producción con cliente de pago &middot; 7.561 pruebas automatizadas
+                </p>
                 <div class="mt-5">
                   <div class="flex flex-wrap gap-2">
                     <button type="button" class="btn-ghost cursor-pointer px-3 py-2 text-xs" onclick="toggleProjectDetails(this)">
@@ -869,11 +1104,14 @@
                   <div class="project-details mt-4 hidden" style="display: none;">
                     <h4 class="text-sm font-semibold text-primary/95">Características principales:</h4>
                     <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-200/85">
-                      <li>Panel admin para gestionar alumnos, clases, asistencia y pagos</li>
-                      <li>Sistema multi-tenant (varias academias con datos aislados)</li>
+                      <li>Asistente de IA que consulta los datos del club y ejecuta herramientas sobre la base de datos (<em>function calling</em> en producción), con entrada por texto y por voz</li>
+                      <li>26 módulos funcionales: alumnos, docentes, clases, calendario, asistencia, pagos, contabilidad, comprobantes por WhatsApp, cotizador, CRM, torneos, suscripciones, auditoría y reportes</li>
+                      <li>Sistema multi-tenant con aislamiento de datos por club</li>
                       <li>Roles y permisos (SUPER_ADMIN, ADMIN, Docente)</li>
                       <li>Reportes y exportación a Excel</li>
-                      <li>Arquitectura hexagonal + DDD con tests unitarios</li>
+                      <li>Arquitectura hexagonal y DDD: capas de dominio, aplicación, infraestructura e interfaz separadas</li>
+                      <li>7.561 pruebas automatizadas en 776 archivos, sobre 77 modelos de datos y 102 migraciones</li>
+                      <li>Infraestructura propia: Railway para el despliegue, Resend para correo transaccional y Cloudflare R2 para audio, imagen y video</li>
                       <li>Desarrollado íntegramente con Claude Code, aplicando Skills, MCP (Model Context Protocol), Harness de agentes y metodología SDD (Spec-Driven Development)</li>
                     </ul>
                   </div>
@@ -962,6 +1200,15 @@
               <div class="flex items-center gap-2"><i class="fas fa-chart-line text-slate-200/80"></i><span>Trabajo bajo objetivos (KPIs de tiempo/minutos)</span></div>
             </div>
           </div>
+
+          <!-- Idiomas -->
+          <div class="surface surface-hover p-6">
+            <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-language mr-2 text-primary/90"></i>Idiomas</h3>
+            <div class="mt-4 space-y-3 text-sm text-slate-200/85">
+              <div class="flex items-center gap-2"><i class="fas fa-comments text-slate-200/80"></i><span>Español (nativo)</span></div>
+              <div class="flex items-center gap-2"><i class="fas fa-comments text-slate-200/80"></i><span>Inglés (básico)</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -972,9 +1219,32 @@
         <h2 class="section-title">🎓 Educación</h2>
 
         <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Bootcamp IA -->
+          <article class="surface surface-hover p-6 ring-1 ring-primary/30">
+            <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary">
+              <i class="fas fa-bolt"></i> Septiembre 2026
+            </div>
+            <h3 class="text-sm font-bold text-slate-100">
+              <i class="fas fa-robot mr-2 text-primary/90"></i>Bootcamp: Aplicaciones Web y Móviles con IA
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
+              33 horas de desarrollo de aplicaciones web y móviles asistido por inteligencia artificial: orquestación de
+              agentes, generación de código y despliegue de producto real.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <a href="https://ude.my/UC-27739c3e-339c-433a-8e9e-00fd1cb595dc" class="btn-ghost px-3 py-2 text-xs" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-circle-check"></i> Verificar en Udemy
+              </a>
+              <a href="asset/titulos/bootcamp-ia-aplicaciones-web-moviles.pdf" class="btn-ghost px-3 py-2 text-xs" target="_blank">
+                <i class="fas fa-file-pdf"></i> Ver Certificado
+              </a>
+            </div>
+          </article>
+
           <!-- Ingeniero de Software -->
           <article class="surface surface-hover p-6">
             <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-graduation-cap mr-2 text-primary/90"></i>Ingeniero de Software</h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-primary/80">Politécnico Grancolombiano · 2021 – 2024</p>
             <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
               Formación universitaria enfocada en arquitectura de software, metodologías ágiles y desarrollo full stack.
             </p>
@@ -988,6 +1258,7 @@
           <!-- Tecnólogo en Análisis y Desarrollo -->
           <article class="surface surface-hover p-6">
             <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-laptop-code mr-2 text-primary/90"></i>Tecnólogo en Análisis y Desarrollo</h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-primary/80">SENA · 2019 – 2021</p>
             <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
               Enfoque práctico en análisis, diseño e implementación de sistemas de información.
             </p>
@@ -1001,6 +1272,7 @@
           <!-- Curso Angular & Spring Boot -->
           <article class="surface surface-hover p-6">
             <h3 class="text-sm font-bold text-slate-100"><i class="fas fa-certificate mr-2 text-primary/90"></i>Curso Angular & Spring Boot</h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-primary/80">Udemy · 2025</p>
             <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
               Capacitación intensiva para desarrollar aplicaciones web modernas con backend y frontend desacoplados.
             </p>
@@ -1016,6 +1288,7 @@
             <h3 class="text-sm font-bold text-slate-100">
               <i class="fas fa-handshake mr-2 text-primary/90"></i>Ventas y atención al cliente
             </h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-primary/80">Universidad Católica de Oriente · 2025</p>
             <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
               Formación orientada a la comunicación con clientes, gestión de objeciones y construcción de relaciones de
               largo plazo, útil para entender mejor el contexto de negocio detrás de cada proyecto.
@@ -1032,6 +1305,7 @@
             <h3 class="text-sm font-bold text-slate-100">
               <i class="fas fa-microphone-alt mr-2 text-primary/90"></i>Habilidades comunicativas para presentaciones en público
             </h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-primary/80">Universidad Pontificia Bolivariana · 2025</p>
             <p class="mt-3 text-sm leading-relaxed text-slate-200/85">
               Curso centrado en estructurar mensajes claros, presentar ideas técnicas a personas no técnicas y mejorar
               la confianza al exponer resultados de proyectos.
@@ -1054,6 +1328,10 @@
         <div class="mx-auto mt-8 max-w-2xl">
           <div class="surface p-6 md:p-8">
             <ul class="divide-y divide-white/10">
+              <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
+                <i class="fas fa-location-dot text-primary/90"></i>
+                <span>Dabeiba, Antioquia (Colombia) &middot; Disponibilidad para trabajo remoto</span>
+              </li>
               <li class="flex items-center gap-3 py-4 text-sm text-slate-200/85">
                 <i class="fas fa-phone-alt text-primary/90"></i>
                 <span>+57 314 589 9773</span>
@@ -1181,6 +1459,8 @@
 
       // Initialize carousels
       initCarousel('carousel-activisport');
+      initCarousel('carousel-reportemunicipal');
+      initCarousel('carousel-invector');
     });
 
     function initCarousel(id) {

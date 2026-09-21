@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SD">
+  <rect width="64" height="64" rx="14" fill="#020617"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#00adb5" stroke-opacity="0.45" stroke-width="3"/>
+  <text x="32" y="33" fill="#00adb5" font-family="Outfit, Segoe UI, Arial, sans-serif" font-size="32" font-weight="700"
+        text-anchor="middle" dominant-baseline="central" letter-spacing="-1">SD</text>
+</svg>
