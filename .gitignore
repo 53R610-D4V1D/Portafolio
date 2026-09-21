@@ -44,4 +44,5 @@ credentials.json
 # OpenCode/Cursor AI
 .agents/
 .claude/
+.atl/
 skills-lock.json
